@@ -6,10 +6,20 @@
         <entry key="..\:/Users/cheng/AndroidStudioProjects/RNG/app/src/main/res/layout/activity_main.xml" value="0.28804347826086957" />
         <entry key="..\:/Users/cheng/AndroidStudioProjects/RNG/app/src/main/res/layout/activity_main_page.xml" value="0.28804347826086957" />
         <entry key="..\:/Users/cheng/AndroidStudioProjects/RNG/app/src/main/res/layout/activity_register_user.xml" value="0.28804347826086957" />
+        <entry key="..\:/Users/micha/Desktop/CognitiveApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/micha/Desktop/CognitiveApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/micha/Desktop/CognitiveApp/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/Users/micha/Desktop/CognitiveApp/app/src/main/res/layout/activity_main_page.xml" value="0.25" />
+        <entry key="..\:/Users/micha/Desktop/CognitiveApp/app/src/main/res/layout/activity_register_user.xml" value="0.5" />
+        <entry key="..\:/Users/micha/Desktop/CognitiveApp/app/src/main/res/layout/game_selection.xml" value="0.33" />
+        <entry key="..\:/Users/micha/Desktop/CognitiveApp/app/src/main/res/layout/leaderboard_selection_page.xml" value="0.3625" />
+        <entry key="..\:/Users/micha/Desktop/CognitiveApp/app/src/main/res/layout/memory_game_page.xml" value="0.3625" />
+        <entry key="..\:/Users/micha/Desktop/CognitiveApp/app/src/main/res/layout/reaction_game_page.xml" value="0.3625" />
+        <entry key="..\:/Users/micha/Desktop/CognitiveApp/app/src/main/res/layout/trail_making_test_page.xml" value="0.3625" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

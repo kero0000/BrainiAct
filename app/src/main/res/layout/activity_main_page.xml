@@ -8,15 +8,55 @@
     tools:context=".MainPage">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="138dp"
-        android:layout_height="83dp"
-        android:layout_marginStart="142dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="131dp"
-        android:text="Welcome"
-        android:textColor="@android:color/background_light"
+        android:id="@+id/gameNameDisplay"
+        android:layout_width="167dp"
+        android:layout_height="95dp"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="280dp"
+        android:layout_marginBottom="50dp"
+        android:capitalize="none"
+        android:text="@string/app_name2"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <Button
+        android:id="@+id/gameButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="330dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="330dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:text="@string/Game"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/leaderboardButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gameNameDisplay" />
+
+    <Button
+        android:id="@+id/leaderboardButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="330dp"
+        android:layout_marginEnd="330dp"
+        android:layout_marginBottom="50dp"
+        android:text="@string/Leaderboard"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gameButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

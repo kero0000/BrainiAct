@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">RNG</string>
+    <string name="app_name2">BrainiAct</string>
+    <string name="Game">Game</string>
+    <string name="Leaderboard">Leaderboard</string>
+    <string name="Reaction">Reaction</string>
+    <string name="Memory">Memory</string>
+    <string name="Trail_test">Trail Making Test</string>
+    <string name="Logout">Logout</string>
+    <string name="start">Start</string>
+    <string name="Start_prompt">Click the play button to start</string>
+    <string name="Retry">Retry</string>
+    <string name="Exit">Exit</string>
 </resources>
