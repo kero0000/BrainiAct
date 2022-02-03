@@ -11,12 +11,53 @@
         android:theme="@style/Theme.RNG">
         <activity
             android:name=".MainPage"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden"/>
+        <activity
+            android:name=".RegisterUser"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden"
             android:exported="true" />
         <activity
-            android:name=".registerUser"
+            android:name=".ReactionDifficultyPage"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden"
             android:exported="true" />
+        <activity
+            android:name=".GameSelectionPage"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden"/>
+        <activity
+            android:name=".LeaderboardPage"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden"/>
+        <activity
+            android:name=".ReactionGame"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden"/>
+        <activity
+            android:name=".TrailMakingTest"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden"/>
+        <activity
+            android:name=".MemoryGame"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden"/>
+        <activity
+            android:name=".TrailMakingTestDifficultyPage"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden"/>
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

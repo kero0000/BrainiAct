@@ -7,16 +7,46 @@
     android:background="@color/black"
     tools:context=".MainPage">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="138dp"
-        android:layout_height="83dp"
-        android:layout_marginStart="142dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="131dp"
-        android:text="Welcome"
-        android:textColor="@android:color/background_light"
+    <Button
+        android:id="@+id/gameButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:clickable="true"
+        android:text="@string/Game"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/leaderboardButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/leaderboardButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginBottom="50dp"
+        android:text="@string/Leaderboard"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/gameButton" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.249"
+        app:srcCompat="@drawable/banner_logo" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
