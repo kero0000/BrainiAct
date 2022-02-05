@@ -96,6 +96,7 @@ public class reactionGame extends AppCompatActivity {
                         findViewById(R.id.reaction_game_bckgrd).setOnClickListener(null);
                         timeTaken = System.currentTimeMillis() - startTimer;
                         display_msg.setText("Congratulations!\n" + "Time taken: " + timeTaken);
+                        timeTracker.storeTime(timeTaken); // store time in firebase
                         retryButton.setVisibility(View.VISIBLE);
                         exitButton.setVisibility(View.VISIBLE);
                     }
