@@ -168,15 +168,6 @@ public class TrailMakingTest extends AppCompatActivity {
                                   }
 
                                   // check if element is already in the userPath before adding
-//                                  for (int element = 0; element < userPath.size(); element ++) {
-//                                      if (userPath.get(element) == elementToAdd) {
-//                                          duplicate = 1;
-//                                          break;
-//                                      }
-//                                      duplicate = 0;
-//                                  }
-
-                                  // check if element is already in the userPath before adding
                                   // optimized/made it look nicer it from the above
                                   // sets the duplicate flag
                                   if (userPath.contains(elementToAdd))
@@ -280,6 +271,7 @@ public class TrailMakingTest extends AppCompatActivity {
         int incorrectSequence = 0;
 
         // 1, 2, 3, 5, 7
+
         for (int count = 0; count < userPath.size(); count ++) {
             if (listImgView.get(userPath.get(count)) != listImgView.get(count)) {
                 node = count - 1;
@@ -288,6 +280,12 @@ public class TrailMakingTest extends AppCompatActivity {
         }
 
         // remove values until the node that was clicked
+        if (userPath.size() >= 1 && (listImgView.get(userPath.get(0)) != listImgView.get(0)) )
+        {
+            userPath.subList(0, userPath.size()).clear();
+        }
+
+
         for (int i = 0; i < userPath.size(); i++) {
             if (userPath.get(i) == node) {
                 for (int n = i+1; n < lenOfUserPath; n++) {
