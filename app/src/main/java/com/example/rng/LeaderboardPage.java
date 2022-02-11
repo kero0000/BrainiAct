@@ -4,13 +4,13 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class trailMakingTest extends AppCompatActivity {
+public class LeaderboardPage  extends AppCompatActivity {
 
-    // Main screen for trail making test
-
+    // Main screen for leaderboards
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.trail_making_test_page);
+        setContentView(R.layout.leaderboard_selection_page);
     }
+
 }

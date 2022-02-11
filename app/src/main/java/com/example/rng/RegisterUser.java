@@ -3,7 +3,6 @@ package com.example.rng;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,7 +16,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class registerUser extends AppCompatActivity {
+public class RegisterUser extends AppCompatActivity {
     private EditText editTextEmail, editTextPassword, editTextName, editTextAge;
     private FirebaseAuth mAuth;
     private Button registerButton;
@@ -64,18 +63,18 @@ public class registerUser extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){ // save the new user data to firebase rtdb
-                                Toast.makeText(registerUser.this, "User has been successfully registered", Toast.LENGTH_LONG).show();
+                                Toast.makeText(RegisterUser.this, "User has been successfully registered", Toast.LENGTH_LONG).show();
                                 progressBar.setVisibility(View.GONE);
                             }
                             else{
-                                Toast.makeText(registerUser.this, "Failed to register!", Toast.LENGTH_LONG).show();
+                                Toast.makeText(RegisterUser.this, "Failed to register!", Toast.LENGTH_LONG).show();
                                 progressBar.setVisibility(View.GONE);
                             }
                         }
                     });
 
                 }else{
-                    Toast.makeText(registerUser.this, "Failed to register!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegisterUser.this, "Failed to register!", Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.GONE);
                 }
             }
