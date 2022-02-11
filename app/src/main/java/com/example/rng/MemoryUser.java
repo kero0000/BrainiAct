@@ -1,11 +1,11 @@
 package com.example.rng;
 
-public class memoryUser {
+public class MemoryUser {
     protected int stage = 1;
     protected int lives = 3;
 
     //constructor
-    memoryUser(){};
+    MemoryUser(){};
 
     protected void setLives(int lives){
         this.lives = lives;

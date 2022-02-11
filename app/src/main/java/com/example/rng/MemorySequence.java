@@ -3,13 +3,13 @@ package com.example.rng;
 import java.util.ArrayList;
 
 
-class memorySequence {
+class MemorySequence {
     protected ArrayList<Integer> sequencearray = new ArrayList<Integer>();
     protected static int maxSequenceSize = 0;
 
     //constructors
-    public memorySequence(){}
-    public memorySequence(int maxSequenceSize) {
+    public MemorySequence(){}
+    public MemorySequence(int maxSequenceSize) {
         this.maxSequenceSize = maxSequenceSize;
     }
 
@@ -46,7 +46,7 @@ class memorySequence {
         this.sequencearray.add(num);
     }
 
-    public int compareTo(memorySequence memorySequence) {
+    public int compareTo(MemorySequence memorySequence) {
         int i;
         for(i=0; i < memorySequence.getSequenceSize(); i++){
             if (memorySequence.getSequenceElement(i) != this.sequencearray.get(i)){

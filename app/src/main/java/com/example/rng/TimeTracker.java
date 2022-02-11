@@ -1,6 +1,5 @@
 package com.example.rng;
 
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -10,7 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-public class timeTracker {
+public class TimeTracker {
 
     static void storeTime(double timeTaken) {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -20,7 +19,7 @@ public class timeTracker {
         }
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("allScores");
         String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
-        record record = new record(date, timeTaken);
+        Record record = new Record(date, timeTaken);
 
         rootRef.child(uid).child("reaction").push().setValue(record);
     }

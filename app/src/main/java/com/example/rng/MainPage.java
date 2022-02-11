@@ -26,7 +26,7 @@ public class MainPage extends AppCompatActivity {
         gameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainPage.this, gameSelectionPage.class));
+                startActivity(new Intent(MainPage.this, GameSelectionPage.class));
             }
         });
 
@@ -34,7 +34,7 @@ public class MainPage extends AppCompatActivity {
         leaderboardButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainPage.this, leaderboardPage.class));
+                startActivity(new Intent(MainPage.this, LeaderboardPage.class));
             }
         });
 

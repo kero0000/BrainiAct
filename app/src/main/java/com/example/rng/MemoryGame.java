@@ -18,14 +18,14 @@ import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class memoryGame extends AppCompatActivity {
+public class MemoryGame extends AppCompatActivity {
     // define constants and model instances
     private static final int max_sequence_size = 30;
     private static boolean buttonDisabled = false;
 
-    protected memorySequence expected = new memorySequence(max_sequence_size);
-    protected memorySequence response = new memorySequence();
-    protected memoryUser memoryUser = new memoryUser();
+    protected MemorySequence expected = new MemorySequence(max_sequence_size);
+    protected MemorySequence response = new MemorySequence();
+    protected MemoryUser memoryUser = new MemoryUser();
 
     protected int level = 0;
     protected ArrayList<Button> buttonArray = new ArrayList<Button>();
@@ -47,7 +47,7 @@ public class memoryGame extends AppCompatActivity {
         backButton.setOnClickListener( new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(memoryGame.this, memoryGameDifficulty.class);
+                Intent intent = new Intent(MemoryGame.this, MemoryGameDifficulty.class);
                 startActivity(intent);
             }
 
@@ -55,8 +55,11 @@ public class memoryGame extends AppCompatActivity {
         returnButton.setOnClickListener( new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(memoryGame.this, memoryGameDifficulty.class);
+                Intent intent = new Intent(MemoryGame.this, MemoryGameDifficulty.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+//                Intent intent = new Intent(MemoryGame.this, MemoryGameDifficulty.class);
+//                startActivity(intent);
             }
         });
 
@@ -177,7 +180,7 @@ public class memoryGame extends AppCompatActivity {
         }
     }
 
-    protected void showSequence(ArrayList<Button> buttonArray, memorySequence memorySequence, int stage){
+    protected void showSequence(ArrayList<Button> buttonArray, MemorySequence memorySequence, int stage){
         for(int i = 0; i< memoryUser.getStage(); i++){
             Button sequencebutton = buttonArray.get(memorySequence.getSequenceElement(i)-1);
             Timer timerRed = new Timer();
