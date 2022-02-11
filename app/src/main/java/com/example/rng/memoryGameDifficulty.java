@@ -22,8 +22,8 @@ public class memoryGameDifficulty extends AppCompatActivity {
         Easy.setOnClickListener( new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                // if easy is clicked, the activity will switch to gameController
-                // the variable level is passed into the gameController activity
+                // if easy is clicked, the activity will switch to memoryGame
+                // the variable level is passed into the memoryGame activity
                 level = 1;
                 Intent intent = new Intent(memoryGameDifficulty.this, memoryGame.class);
                 intent.putExtra("key",level);
@@ -34,8 +34,8 @@ public class memoryGameDifficulty extends AppCompatActivity {
         Hard.setOnClickListener( new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                // if hard is clicked, the activity will switch to gameController
-                // the variable level is passed into the gameController activity
+                // if hard is clicked, the activity will switch to memoryGame
+                // the variable level is passed into the memoryGame activity
                 level = 2;
                 Intent intent = new Intent(memoryGameDifficulty.this, memoryGame.class);
                 intent.putExtra("key",level);
