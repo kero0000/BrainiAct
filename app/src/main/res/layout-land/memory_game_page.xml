@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/GhostWhite">
-
 
     <TextView
         android:id="@+id/stageTxt"
@@ -17,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.14" />
+        app:layout_constraintVertical_bias="0.224" />
 
     <TextView
         android:id="@+id/livesTxt"
@@ -28,7 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.11" />
+        app:layout_constraintVertical_bias="0.162" />
 
     <TextView
         android:id="@+id/memory_game_title"
@@ -42,19 +40,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.033"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintVertical_bias="0.014" />
 
     <TableLayout
         android:id="@+id/tableGrid"
-        android:layout_width="374dp"
-        android:layout_height="452dp"
-        android:layout_marginVertical="5dp"
+        android:layout_width="398dp"
+        android:layout_height="233dp"
         android:stretchColumns="*"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.899">
 
     </TableLayout>
 
@@ -65,28 +62,27 @@
         android:text="Back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.015"
+        app:layout_constraintHorizontal_bias="0.021"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.979" />
+        app:layout_constraintVertical_bias="0.955" />
 
     <Button
-        android:id="@+id/instructionsBtn"
+        android:id="@+id/instructionsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:text="Instructions"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintHorizontal_bias="0.992"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.979" />
+        app:layout_constraintVertical_bias="0.955" />
 
     <LinearLayout
         android:id="@+id/endGame"
-        android:layout_width="369dp"
-        android:layout_height="92dp"
+        android:layout_width="560dp"
+        android:layout_height="100dp"
         android:background="#00BCD4"
         android:orientation="vertical"
         android:visibility="invisible"
@@ -117,5 +113,6 @@
             android:text="Return To Memory Game Page" />
 
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
