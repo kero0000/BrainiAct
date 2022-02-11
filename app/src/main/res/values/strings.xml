@@ -11,4 +11,5 @@
     <string name="Start_prompt">Click the play button to start</string>
     <string name="Retry">Retry</string>
     <string name="Exit">Exit</string>
+    <string name="TMT">Trail Making Test</string>
 </resources>

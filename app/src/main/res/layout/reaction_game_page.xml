@@ -2,20 +2,23 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/reaction_game_bckgrd"
+    android:id="@+id/circles_bckgrd"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#101010">
 
+
     <EditText
         android:id="@+id/startPromptMsgTxt"
-        android:layout_width="296dp"
-        android:layout_height="45dp"
+        android:layout_width="353dp"
+        android:layout_height="46dp"
         android:layout_marginBottom="20dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/Start_prompt"
+        android:textAlignment="center"
         android:textColor="#FFFFFF"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -38,32 +41,38 @@
 
     <TextView
         android:id="@+id/display_msg"
-        android:layout_width="286dp"
-        android:layout_height="73dp"
+        android:layout_width="282dp"
+        android:layout_height="88dp"
         android:layout_marginStart="217dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="228dp"
         android:layout_marginBottom="60dp"
+        android:textAlignment="center"
+        android:textSize="28sp"
         app:layout_constraintBottom_toTopOf="@+id/playButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/waitForGreen"
-        android:layout_width="196dp"
-        android:layout_height="55dp"
+        android:layout_width="236dp"
+        android:layout_height="52dp"
         android:layout_marginStart="251dp"
         android:layout_marginTop="27dp"
         android:layout_marginEnd="284dp"
         android:layout_marginBottom="20dp"
         android:text="Wait for green ..."
+        android:textAlignment="center"
+        android:textSize="28sp"
         app:layout_constraintBottom_toTopOf="@+id/playButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/display_msg" />
+        app:layout_constraintTop_toBottomOf="@+id/display_msg"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/exit_button"

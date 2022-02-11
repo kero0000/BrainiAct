@@ -24,9 +24,9 @@ public class GameSelectionPage extends AppCompatActivity {
         setContentView(R.layout.game_selection);
 
         // Assign the button variables their ID's
-        reactionButton = findViewById(R.id.reactionGameButton);
+        reactionButton = findViewById(R.id.reactionEasy);
         memoryButton = findViewById(R.id.memoryGameButton);
-        trailMakingButton = findViewById(R.id.trailMakingTestButton);
+        trailMakingButton = findViewById(R.id.reactionHard);
 
 
 
@@ -34,7 +34,7 @@ public class GameSelectionPage extends AppCompatActivity {
         reactionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(GameSelectionPage.this, ReactionGame.class));
+                startActivity(new Intent(GameSelectionPage.this, ReactionDifficultyPage.class));
             }
         });
 
@@ -50,7 +50,7 @@ public class GameSelectionPage extends AppCompatActivity {
         trailMakingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(GameSelectionPage.this, TrailMakingTest.class));
+                startActivity(new Intent(GameSelectionPage.this, TrailMakingTestDifficultyPage.class));
             }
         });
 

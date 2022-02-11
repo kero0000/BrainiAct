@@ -20,12 +20,17 @@
             android:configChanges="orientation|keyboardHidden"
             android:exported="true" />
         <activity
+            android:name=".ReactionDifficultyPage"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+        <activity
             android:name=".GameSelectionPage"
             android:exported="true"
             android:screenOrientation="landscape"
             android:configChanges="orientation|keyboardHidden"/>
         <activity
-            android:name=".leaderboardPage"
+            android:name=".LeaderboardPage"
             android:exported="true"
             android:screenOrientation="landscape"
             android:configChanges="orientation|keyboardHidden"/>
@@ -46,6 +51,7 @@
             android:configChanges="orientation|keyboardHidden"/>
         <activity
             android:name=".MemoryGameDifficulty"
+            android:name=".TrailMakingTestDifficultyPage"
             android:exported="true"
             android:screenOrientation="landscape"
             android:configChanges="orientation|keyboardHidden"/>

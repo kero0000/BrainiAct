@@ -20,6 +20,25 @@
         <entry key="..\:/Users/shrey/AndroidStudioProjects/CognitiveApp/app/src/main/res/layout-land/memory_game_page.xml" value="0.16145833333333334" />
         <entry key="..\:/Users/shrey/AndroidStudioProjects/CognitiveApp/app/src/main/res/layout-port/memory_game_difficulty_selector.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/shrey/AndroidStudioProjects/CognitiveApp/app/src/main/res/layout/memory_game_page.xml" value="0.28703703703703703" />
+        <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp_Testing/app/src/main/res/drawable/circle_1.xml" value="0.12" />
+        <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp_Testing/app/src/main/res/drawable/circle_2.xml" value="0.265625" />
+        <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp_Testing/app/src/main/res/drawable/circle_3.xml" value="0.265625" />
+        <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp_Testing/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2578125" />
+        <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp_Testing/app/src/main/res/layout/TMT_selection.xml" value="0.307518115942029" />
+        <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp_Testing/app/src/main/res/layout/abs_circles.xml" value="0.21965579710144928" />
+        <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp_Testing/app/src/main/res/layout/activity_main.xml" value="0.20244565217391305" />
+        <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp_Testing/app/src/main/res/layout/activity_main_page.xml" value="0.22" />
+        <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp_Testing/app/src/main/res/layout/activity_register_user.xml" value="0.20244565217391305" />
+        <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp_Testing/app/src/main/res/layout/circles.xml" value="0.1" />
+        <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp_Testing/app/src/main/res/layout/circles_rel.xml" value="0.33" />
+        <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp_Testing/app/src/main/res/layout/game_selection.xml" value="0.20244565217391305" />
+        <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp_Testing/app/src/main/res/layout/leaderboard_selection_page.xml" value="0.20244565217391305" />
+        <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp_Testing/app/src/main/res/layout/memory_game_page.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp_Testing/app/src/main/res/layout/reaction_game_page.xml" value="0.18" />
+        <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp_Testing/app/src/main/res/layout/reaction_game_selection.xml" value="0.20244565217391305" />
+        <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp_Testing/app/src/main/res/layout/tmt_selection.xml" value="0.2464726631393298" />
+        <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp_Testing/app/src/main/res/layout/trail_making_game_selection.xml" value="0.2911458333333333" />
+        <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp_Testing/app/src/main/res/layout/trail_making_test_page.xml" value="0.20244565217391305" />
       </map>
     </option>
   </component>
@@ -28,5 +47,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.307518115942029" />
+      </ProjectState>
+    </option>
   </component>
 </project>

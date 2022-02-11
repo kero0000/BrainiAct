@@ -12,55 +12,49 @@
         android:layout_width="115dp"
         android:layout_height="72dp"
         android:layout_marginTop="251dp"
+        android:layout_marginEnd="188dp"
         android:layout_marginBottom="88dp"
-        android:text="@string/Trail_test"
+        android:text="Hard"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/memoryGameButton"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/reactionEasy"
         android:layout_width="115dp"
         android:layout_height="72dp"
+        android:layout_marginStart="160dp"
         android:layout_marginTop="251dp"
         android:layout_marginBottom="88dp"
-        android:text="@string/Reaction"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/memoryGameButton"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/memoryGameButton"
-        android:layout_width="115dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="251dp"
-        android:layout_marginBottom="88dp"
-        android:text="@string/Memory"
+        android:text="Easy"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/reactionHard"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/reactionEasy"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.134"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-
+    <TextView
+        android:id="@+id/gameNameDisplay"
+        android:layout_width="259dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="280dp"
+        android:layout_marginBottom="50dp"
+        android:text="Reaction Game"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/white"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.161"
-        app:srcCompat="@drawable/banner_logo" />
+        app:layout_constraintVertical_bias="0.11" />
 
     <TextView
         android:id="@+id/Header"
@@ -70,7 +64,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="280dp"
         android:layout_marginBottom="50dp"
-        android:text="Please pick a game below!"
+        android:text="Please pick a difficulty!"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/white"
@@ -79,6 +73,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45" />
+        app:layout_constraintVertical_bias="0.436" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
