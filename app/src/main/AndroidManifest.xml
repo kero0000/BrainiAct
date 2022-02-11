@@ -51,6 +51,10 @@
             android:configChanges="orientation|keyboardHidden"/>
         <activity
             android:name=".MemoryGameDifficulty"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden"/>
+        <activity
             android:name=".TrailMakingTestDifficultyPage"
             android:exported="true"
             android:screenOrientation="landscape"
