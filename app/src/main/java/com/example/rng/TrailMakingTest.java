@@ -4,12 +4,13 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class memoryGame extends AppCompatActivity {
+public class TrailMakingTest extends AppCompatActivity {
 
-    // main screen for memory game
+    // Main screen for trail making test
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.memory_game_page);
+        setContentView(R.layout.trail_making_test_page);
     }
 }

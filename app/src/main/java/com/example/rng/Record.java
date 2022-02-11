@@ -1,14 +1,14 @@
 package com.example.rng;
 
-public class record {
+public class Record {
     String date;
     double scores;
 
-    public record(String date, double scores){
+    public Record(String date, double scores){
         this.date = date;
         this.scores = scores;
     }
-    public record(){}
+    public Record(){}
 
 
     public String getDate(){

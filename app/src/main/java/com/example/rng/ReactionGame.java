@@ -13,7 +13,7 @@ import java.util.TimerTask;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class reactionGame extends AppCompatActivity {
+public class ReactionGame extends AppCompatActivity {
 
     private Timer myTimer;
     private int flag = 0;
@@ -96,7 +96,7 @@ public class reactionGame extends AppCompatActivity {
                         findViewById(R.id.reaction_game_bckgrd).setOnClickListener(null);
                         timeTaken = System.currentTimeMillis() - startTimer;
                         display_msg.setText("Congratulations!\n" + "Time taken: " + timeTaken);
-                        timeTracker.storeTime(timeTaken); // store time in firebase
+                        TimeTracker.storeTime(timeTaken); // store time in firebase
                         retryButton.setVisibility(View.VISIBLE);
                         exitButton.setVisibility(View.VISIBLE);
                     }
@@ -132,7 +132,7 @@ public class reactionGame extends AppCompatActivity {
             exitButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    startActivity(new Intent(reactionGame.this, gameSelectionPage.class));
+                    startActivity(new Intent(ReactionGame.this, GameSelectionPage.class));
                 }
             });
 

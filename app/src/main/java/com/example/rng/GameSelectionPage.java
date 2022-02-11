@@ -1,19 +1,16 @@
 package com.example.rng;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Timer;
-import java.util.TimerTask;
 
 
-public class gameSelectionPage extends AppCompatActivity {
+public class GameSelectionPage extends AppCompatActivity {
 
     private Timer myTimer;
     private int flag = 0;
@@ -37,7 +34,7 @@ public class gameSelectionPage extends AppCompatActivity {
         reactionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(gameSelectionPage.this, reactionGame.class));
+                startActivity(new Intent(GameSelectionPage.this, ReactionGame.class));
             }
         });
 
@@ -45,7 +42,7 @@ public class gameSelectionPage extends AppCompatActivity {
         memoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(gameSelectionPage.this, memoryGame.class));
+                startActivity(new Intent(GameSelectionPage.this, MemoryGameDifficulty.class));
             }
         });
 
@@ -53,7 +50,7 @@ public class gameSelectionPage extends AppCompatActivity {
         trailMakingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(gameSelectionPage.this, trailMakingTest.class));
+                startActivity(new Intent(GameSelectionPage.this, TrailMakingTest.class));
             }
         });
 

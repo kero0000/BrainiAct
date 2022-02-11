@@ -15,12 +15,12 @@
             android:screenOrientation="landscape"
             android:configChanges="orientation|keyboardHidden"/>
         <activity
-            android:name=".registerUser"
+            android:name=".RegisterUser"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden"
             android:exported="true" />
         <activity
-            android:name=".gameSelectionPage"
+            android:name=".GameSelectionPage"
             android:exported="true"
             android:screenOrientation="landscape"
             android:configChanges="orientation|keyboardHidden"/>
@@ -30,17 +30,22 @@
             android:screenOrientation="landscape"
             android:configChanges="orientation|keyboardHidden"/>
         <activity
-            android:name=".reactionGame"
+            android:name=".ReactionGame"
             android:exported="true"
             android:screenOrientation="landscape"
             android:configChanges="orientation|keyboardHidden"/>
         <activity
-            android:name=".trailMakingTest"
+            android:name=".TrailMakingTest"
             android:exported="true"
             android:screenOrientation="landscape"
             android:configChanges="orientation|keyboardHidden"/>
         <activity
-            android:name=".memoryGame"
+            android:name=".MemoryGame"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden"/>
+        <activity
+            android:name=".MemoryGameDifficulty"
             android:exported="true"
             android:screenOrientation="landscape"
             android:configChanges="orientation|keyboardHidden"/>
