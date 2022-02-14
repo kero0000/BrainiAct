@@ -153,6 +153,7 @@ public class MemoryGame extends AppCompatActivity {
             livesTxt.setText("Lives: "+Integer.toString(memoryUser.getLives()));
             if(memoryUser.getLives() == 0){ // no lives left
                 buttonDisabled = true;
+                memoryUser.storeStage();
                 tableGrid.setVisibility(View.INVISIBLE);
                 endGame.bringToFront();
                 stagesClearedTxt.setText("Stages Complete:"+Integer.toString(memoryUser.getStage()));
@@ -166,6 +167,7 @@ public class MemoryGame extends AppCompatActivity {
             response.clearSequence();
             if(memoryUser.getStage() == max_sequence_size){ // finished all available stages
                 buttonDisabled = true;
+                memoryUser.storeStage();
                 tableGrid.setVisibility(View.INVISIBLE);
                 endGame.bringToFront();
                 stagesClearedTxt.setText("Stages Complete:"+Integer.toString(memoryUser.getStage()));
