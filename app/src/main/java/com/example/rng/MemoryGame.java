@@ -135,7 +135,7 @@ public class MemoryGame extends AppCompatActivity {
     }
 
 
-    void gridButtonClicked(int Id){
+    protected void gridButtonClicked(int Id){
         // add new input into sequence
         response.addToSequence(Id);
         // compare both sequences
