@@ -46,7 +46,7 @@ class MemorySequence {
         this.sequencearray.add(num);
     }
 
-    public int compareTo(MemorySequence memorySequence) {
+    protected int compareTo(MemorySequence memorySequence) {
         int i;
         for(i=0; i < memorySequence.getSequenceSize(); i++){
             if (memorySequence.getSequenceElement(i) != this.sequencearray.get(i)){
