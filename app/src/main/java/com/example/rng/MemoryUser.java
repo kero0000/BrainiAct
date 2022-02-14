@@ -11,6 +11,7 @@ import java.util.Date;
 public class MemoryUser {
     protected int stage = 1;
     protected int lives = 3;
+    protected String gameDifficulty;
 
     //constructor
     MemoryUser(){};
@@ -31,6 +32,14 @@ public class MemoryUser {
         return this.stage;
     }
 
+    protected void setGameDifficulty(String gameDifficulty) {
+        this.gameDifficulty = gameDifficulty;
+    }
+
+    protected String getGameDifficulty(){
+        return this.gameDifficulty;
+    }
+
     protected void storeStage() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = null;
@@ -41,7 +50,7 @@ public class MemoryUser {
         String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
         Record record = new Record(date, this.stage);
 
-        rootRef.child(uid).child("memory").push().setValue(record);
+        rootRef.child(uid).child("memory").child(this.gameDifficulty).push().setValue(record);
     }
 
 }

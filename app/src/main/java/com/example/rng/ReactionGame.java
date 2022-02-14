@@ -21,6 +21,7 @@ public class ReactionGame extends AppCompatActivity {
     private TextView waitMsg;
     private Button retryButton, exitButton;
     private int randomInt;
+    private String gameDifficulty;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,8 +110,10 @@ public class ReactionGame extends AppCompatActivity {
         randomInt =  rd.nextInt(10);
 
         if (gameLevel.equals("Easy")) {
+            gameDifficulty = "easy";
             this.runOnUiThread(Green);
         } else if (gameLevel.equals("Hard")){
+            gameDifficulty = "hard";
             if (randomInt == 1 || randomInt == 3 || randomInt == 5) {
                 this.runOnUiThread(White);
             } else if (randomInt == 2 || randomInt == 4) {
@@ -141,6 +144,7 @@ public class ReactionGame extends AppCompatActivity {
                         findViewById(R.id.circles_bckgrd).setOnClickListener(null);
                         endTimer = System.currentTimeMillis();
                         timeTaken = endTimer - startTimer;
+                        TimeTracker.storeTime(timeTaken, gameDifficulty, "reaction");
                         display_msg.setText("Congratulations!\n" + "Time taken: " + timeTaken + " ms");
                         retryButton.setVisibility(View.VISIBLE);
                         exitButton.setVisibility(View.VISIBLE);
