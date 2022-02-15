@@ -10,8 +10,9 @@ import java.util.Date;
 
 
 public class TimeTracker {
+    private String gameLevel;
 
-    static void storeTime(double timeTaken) {
+    static void storeTime(double timeTaken, String gameLevel, String game) {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = null;
         if (user != null) {
@@ -21,6 +22,6 @@ public class TimeTracker {
         String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
         Record record = new Record(date, timeTaken);
 
-        rootRef.child(uid).child("reaction").push().setValue(record);
+        rootRef.child(uid).child(game).child(gameLevel).push().setValue(record);
     }
 }

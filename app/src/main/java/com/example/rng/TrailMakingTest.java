@@ -36,6 +36,7 @@ public class TrailMakingTest extends AppCompatActivity {
     private double startTimer, endTimer, timeTaken;
     private Button retryButton, exitButton, playButton;
     private TextView playTextView, headerTextView;
+    private String gameDifficulty;
 
     // Main screen for trail making test
 
@@ -87,6 +88,7 @@ public class TrailMakingTest extends AppCompatActivity {
 
         if (gameLevel.equals("Medium"))
         {
+            gameDifficulty = "medium";
             for (int i = 0; i < AlphabetImgView.size(); i++)
             {
                 ImageView imageview;
@@ -97,6 +99,7 @@ public class TrailMakingTest extends AppCompatActivity {
 
         if (gameLevel.equals("Hard"))
         {
+            gameDifficulty = "hard";
             int intCount = 0;
             int alphaCount = 0;
             for (int i = 0; i < AlphabetImgView.size(); i++)
@@ -208,7 +211,7 @@ public class TrailMakingTest extends AppCompatActivity {
                               if (checkGameOver()) {
                                   endTimer = System.currentTimeMillis();
                                   timeTaken = endTimer - startTimer;
-                                  displayWinMsg(timeTaken);
+                                  displayWinMsg(timeTaken, gameDifficulty);
 
                                   //de-initialize onClick listeners for the nodes
                                   for (int i = 0; i < 15; i++) {
@@ -344,7 +347,7 @@ public class TrailMakingTest extends AppCompatActivity {
         return gameOver;
     }
 
-    private void displayWinMsg(double timeTaken) {
+    private void displayWinMsg(double timeTaken, String gameDifficulty) {
         // overwrite current bitmap
         bitmap = Bitmap.createBitmap(width,height, Bitmap.Config.ARGB_8888);
         imageView.bringToFront();
@@ -361,6 +364,8 @@ public class TrailMakingTest extends AppCompatActivity {
         retryButton.setVisibility(View.VISIBLE);
         exitButton.setVisibility(View.VISIBLE);
         imageView.setImageBitmap(bitmap);
+
+        TimeTracker.storeTime(timeTaken, gameDifficulty, "TMT");
     }
 
     private void randomizeImagePos(ArrayList<Integer> listImgView) {

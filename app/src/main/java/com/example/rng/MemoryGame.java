@@ -23,6 +23,8 @@ public class MemoryGame extends AppCompatActivity {
     private static final int max_sequence_size = 30;
     private static boolean buttonDisabled = false;
 
+    private String gameDifficulty;
+
     protected MemorySequence expected = new MemorySequence(max_sequence_size);
     protected MemorySequence response = new MemorySequence();
     protected MemoryUser memoryUser = new MemoryUser();
@@ -38,6 +40,12 @@ public class MemoryGame extends AppCompatActivity {
         //get key
         if (extras != null) {
             level = extras.getInt("key");
+            if(level == 1){
+                memoryUser.setGameDifficulty("easy");
+            }
+            else{
+                memoryUser.setGameDifficulty("hard");
+            }
         }
         setContentView(R.layout.memory_game_page);
 
