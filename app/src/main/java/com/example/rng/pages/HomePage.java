@@ -15,7 +15,7 @@ import com.example.rng.TrailMakingTestDifficultyPage;
 public class HomePage extends AppCompatActivity {
 
 
-    private Button reactionGameButton, memoryGameButton, tmtGameButton, leaderboardButton;
+    private Button reactionGameButton, memoryGameButton, tmtGameButton, leaderboardButton, helpButton;
 
 
     @Override
@@ -28,6 +28,7 @@ public class HomePage extends AppCompatActivity {
         memoryGameButton = findViewById(R.id.memoryGameBtn);
         tmtGameButton = findViewById(R.id.tmtBtn);
         leaderboardButton = findViewById(R.id.leaderboardButton);
+        helpButton = findViewById(R.id.helpButton);
 
         // Set the buttons such that they can link to another page ( This is an on click listener for reaction game )
         reactionGameButton.setOnClickListener(new View.OnClickListener() {
@@ -58,6 +59,13 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(HomePage.this, LeaderboardPage.class));
+            }
+        });
+
+        helpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomePage.this, HelpPage.class));
             }
         });
 

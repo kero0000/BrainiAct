@@ -25,7 +25,7 @@
             android:configChanges="orientation|keyboardHidden"
             android:exported="true" />
         <activity
-            android:name=".GameSelectionPage"
+            android:name=".pages.HelpPage"
             android:exported="true"
             android:screenOrientation="landscape"
             android:configChanges="orientation|keyboardHidden"/>
