@@ -10,12 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RNG">
         <activity
-            android:name=".MainPage"
+            android:name=".pages.HomePage"
             android:exported="true"
             android:screenOrientation="landscape"
             android:configChanges="orientation|keyboardHidden"/>
         <activity
-            android:name=".RegisterUser"
+            android:name=".pages.RegisterPage"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden"
             android:exported="true" />
@@ -30,7 +30,7 @@
             android:screenOrientation="landscape"
             android:configChanges="orientation|keyboardHidden"/>
         <activity
-            android:name=".LeaderboardPage"
+            android:name=".pages.LeaderboardPage"
             android:exported="true"
             android:screenOrientation="landscape"
             android:configChanges="orientation|keyboardHidden"/>
@@ -60,7 +60,7 @@
             android:screenOrientation="landscape"
             android:configChanges="orientation|keyboardHidden"/>
         <activity
-            android:name=".MainActivity"
+            android:name=".pages.LoginPage"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden"
             android:exported="true">

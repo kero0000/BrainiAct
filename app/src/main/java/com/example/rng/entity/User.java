@@ -1,4 +1,4 @@
-package com.example.rng;
+package com.example.rng.entity;
 
 public class User {
     private String name, age, email;

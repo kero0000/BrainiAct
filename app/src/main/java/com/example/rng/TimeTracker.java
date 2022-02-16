@@ -2,6 +2,7 @@ package com.example.rng;
 
 import androidx.annotation.NonNull;
 
+import com.example.rng.entity.scoreRecord;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -25,7 +26,7 @@ public class TimeTracker {
         }
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("allScores");
         String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
-        Record record = new Record(date, timeTaken);
+        scoreRecord record = new scoreRecord(date, timeTaken);
 
         rootRef.child(uid).child(game).child(gameLevel).push().setValue(record);
         overWriteHighScore(timeTaken, gameLevel, game);

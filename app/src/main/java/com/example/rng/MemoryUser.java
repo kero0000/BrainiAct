@@ -2,6 +2,7 @@ package com.example.rng;
 
 import androidx.annotation.NonNull;
 
+import com.example.rng.entity.scoreRecord;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -53,7 +54,7 @@ public class MemoryUser {
         }
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("allScores");
         String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
-        Record record = new Record(date, this.stage);
+        scoreRecord record = new scoreRecord(date, this.stage);
 
         rootRef.child(uid).child("memory").child(this.gameDifficulty).push().setValue(record);
         overWriteHighScore((long) this.stage,this.gameDifficulty);

@@ -88,7 +88,7 @@ public class ReactionGame extends AppCompatActivity {
                 exitButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        startActivity(new Intent(ReactionGame.this, GameSelectionPage.class));
+                        startActivity(new Intent(ReactionGame.this, ReactionDifficultyPage.class));
                     }
                 });
             }
@@ -181,7 +181,7 @@ public class ReactionGame extends AppCompatActivity {
             exitButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    startActivity(new Intent(ReactionGame.this, GameSelectionPage.class));
+                    startActivity(new Intent(ReactionGame.this, ReactionDifficultyPage.class));
                 }
             });
 
@@ -218,7 +218,7 @@ public class ReactionGame extends AppCompatActivity {
             exitButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    startActivity(new Intent(ReactionGame.this, GameSelectionPage.class));
+                    startActivity(new Intent(ReactionGame.this, ReactionDifficultyPage.class));
                 }
             });
         }
@@ -254,7 +254,7 @@ public class ReactionGame extends AppCompatActivity {
             exitButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    startActivity(new Intent(ReactionGame.this, GameSelectionPage.class));
+                    startActivity(new Intent(ReactionGame.this, ReactionDifficultyPage.class));
                 }
             });
         }

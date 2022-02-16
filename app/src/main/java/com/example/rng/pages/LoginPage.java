@@ -1,4 +1,4 @@
-package com.example.rng;
+package com.example.rng.pages;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,12 +12,12 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
+import com.example.rng.manager.LoginMgr;
+import com.example.rng.R;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginPage extends AppCompatActivity {
 //    @Override
 //    protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
@@ -58,36 +58,22 @@ public class MainActivity extends AppCompatActivity {
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, RegisterUser.class));
+                startActivity(new Intent(LoginPage.this, RegisterPage.class));
             }
         });
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                userLogin();
-            }
-        });
-    }
-
-    private void userLogin() {
-
-        String email = editTextEmail.getText().toString().trim();
-        String password = editTextPassword.getText().toString().trim();
-
-        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
-            if(task.isSuccessful()){
-                //redirect user profile
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                if(user.isEmailVerified()){
-                    startActivity(new Intent(MainActivity.this, MainPage.class));
-                }else{
-                    user.sendEmailVerification();
-                    Toast.makeText(MainActivity.this, "Check your email to verify account", Toast.LENGTH_LONG).show();
-                }
-            }else{
-                Toast.makeText(MainActivity.this, "Failed to login, please check credentials!", Toast.LENGTH_LONG).show();
-            }
+                LoginMgr loginMgr = new LoginMgr(getApplicationContext(), editTextEmail, editTextPassword);
+                loginMgr.userLogin(new LoginMgr.verifyCallBack(){
+                    @Override
+                    public void verify(boolean[] verified) {
+                        if (verified[0] && verified[1]) {
+                            startActivity(new Intent(LoginPage.this, HomePage.class));
+                        }
+                    }
+                });}
         });
     }
 

@@ -1,8 +1,10 @@
-package com.example.rng;
+package com.example.rng.pages;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.rng.R;
 
 public class LeaderboardPage extends AppCompatActivity {
 

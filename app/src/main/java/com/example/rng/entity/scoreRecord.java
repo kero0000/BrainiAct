@@ -1,14 +1,14 @@
-package com.example.rng;
+package com.example.rng.entity;
 
-public class Record {
+public class scoreRecord {
     String date;
     double scores;
 
-    public Record(String date, double scores){
+    public scoreRecord(String date, double scores){
         this.date = date;
         this.scores = scores;
     }
-    public Record(){}
+    public scoreRecord(){}
 
 
     public String getDate(){

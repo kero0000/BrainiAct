@@ -36,8 +36,7 @@ public class TrailMakingTest extends AppCompatActivity {
     private double startTimer, endTimer, timeTaken;
     private Button retryButton, exitButton, playButton;
     private TextView playTextView, headerTextView;
-    private String gameDifficulty;
-
+    private String gameDifficulty = "Easy";
     // Main screen for trail making test
 
     @Override
@@ -229,7 +228,7 @@ public class TrailMakingTest extends AppCompatActivity {
                                   exitButton.setOnClickListener(new View.OnClickListener() {
                                       @Override
                                       public void onClick(View view) {
-                                          startActivity(new Intent(TrailMakingTest.this, GameSelectionPage.class));
+                                          startActivity(new Intent(TrailMakingTest.this, TrailMakingTestDifficultyPage.class));
                                       }
                                   });
                               }
