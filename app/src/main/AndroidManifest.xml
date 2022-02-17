@@ -26,8 +26,7 @@
             android:name=".pages.ReactionGamePage"
             android:screenOrientation="landscape"
             android:configChanges="orientation|keyboardHidden"
-            android:exported="true"
-            android:screenOrientation="landscape" />
+            android:exported="true" />
         <activity
             android:name=".pages.HelpPage"
             android:configChanges="orientation|keyboardHidden"
@@ -65,7 +64,7 @@
             android:name=".pages.LoginPage"
             android:configChanges="orientation|keyboardHidden"
             android:exported="true"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
