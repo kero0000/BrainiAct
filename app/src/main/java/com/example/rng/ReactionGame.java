@@ -24,12 +24,13 @@ public class ReactionGame extends AppCompatActivity {
     private Button retryButton, exitButton;
     private int randomInt;
     private String gameDifficulty;
+    private TextView display_msg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.reaction_game_page);
-        TextView display_msg;
+        display_msg = (TextView) findViewById(R.id.display_msg);
         display_msg = (TextView) findViewById(R.id.display_msg);
         // Initialise the Views so we can ID them
         ImageView playImageView = findViewById(R.id.playButton);
@@ -54,18 +55,14 @@ public class ReactionGame extends AppCompatActivity {
                 // Set appropriate visibility
                 v.setVisibility(View.GONE);
                 startMsg.setVisibility(View.GONE);
+                waitMsg.setVisibility(View.VISIBLE);                // Displays msg informing users to wait for green screen before tapping screen
 
                 // Set background to red
                 findViewById(R.id.circles_bckgrd).setBackgroundResource(R.color.red_plum);
-                waitMsg.setVisibility(View.VISIBLE);                // Displays msg informing users to wait for green screen before tapping screen
                 findViewById(R.id.circles_bckgrd).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        myTimer.cancel();
-                        waitMsg.setVisibility(View.INVISIBLE);
-                        display_msg.setText("Too soon! Try again!");
-                        retryButton.setVisibility(View.VISIBLE);
-                        exitButton.setVisibility(View.VISIBLE);
+                        failureMsg(display_msg);
                     }
                 });
 
@@ -79,23 +76,8 @@ public class ReactionGame extends AppCompatActivity {
                     }
 
                 }, 0, ThreadLocalRandom.current().nextInt(1000, 6000 + 1));       // 1 seconds == 1000, 10 seconds == 10000, Can set this as we deem fit
-                retryButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        recreate();                   // restarts the instance of the screen
-                    }
-                });
-
-                // On click listener for exit ( Exits the reaction game, and goes back to the game selection page )
-                exitButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        startActivity(new Intent(ReactionGame.this, ReactionGamePage.class));
-                    }
-                });
+                listeners();
             }
-
-
         });
     }
 
@@ -133,8 +115,6 @@ public class ReactionGame extends AppCompatActivity {
     private Runnable Green = new Runnable() {
         double startTimer, endTimer, timeTaken;
         public void run() {
-            TextView display_msg;
-            display_msg = (TextView) findViewById(R.id.display_msg);
             if (flag >= 2) {
                 myTimer.cancel();
                 waitMsg.setVisibility(View.INVISIBLE);
@@ -158,34 +138,12 @@ public class ReactionGame extends AppCompatActivity {
                 findViewById(R.id.circles_bckgrd).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        myTimer.cancel();
-                        waitMsg.setVisibility(View.INVISIBLE);
-                        display_msg.setText("Too soon! Try again!");
-                        retryButton.setVisibility(View.VISIBLE);
-                        exitButton.setVisibility(View.VISIBLE);
-
+                        failureMsg(display_msg);
                         findViewById(R.id.circles_bckgrd).setBackgroundResource(R.color.red_plum);
-
                     }
-
                 });
             }
-
-            // On click listener for retry ( Restarts the instance of the screen )
-            retryButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    recreate();                   // restarts the instance of the screen
-                }
-            });
-
-            // On click listener for exit ( Exits the reaction game, and goes back to the game selection page )
-            exitButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    startActivity(new Intent(ReactionGame.this, ReactionGamePage.class));
-                }
-            });
+            listeners();
 
         }
 
@@ -193,72 +151,59 @@ public class ReactionGame extends AppCompatActivity {
     // White Screen
     private Runnable White = new Runnable() {
         public void run() {
-            TextView display_msg;
-            display_msg = (TextView) findViewById(R.id.display_msg);
             if(flag >= 2) {
                 findViewById(R.id.circles_bckgrd).setBackgroundResource(R.color.white);
                 findViewById(R.id.circles_bckgrd).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        myTimer.cancel();
-                        waitMsg.setVisibility(View.INVISIBLE);
-                        display_msg.setText("Too soon! Try again!");
-                        retryButton.setVisibility(View.VISIBLE);
-                        exitButton.setVisibility(View.VISIBLE);
+                        failureMsg(display_msg);
                     }
                 });
             }
-            // On click listener for retry ( Restarts the instance of the screen )
-            retryButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    recreate();                   // restarts the instance of the screen
-                }
-            });
-
-            // On click listener for exit ( Exits the reaction game, and goes back to the game selection page )
-            exitButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    startActivity(new Intent(ReactionGame.this, ReactionGamePage.class));
-                }
-            });
+            listeners();
         }
     };
 
     // Red Screen
     private Runnable Red = new Runnable() {
         public void run() {
-            TextView display_msg;
-            display_msg = (TextView) findViewById(R.id.display_msg);
             if(flag >= 2) {
                 findViewById(R.id.circles_bckgrd).setBackgroundResource(R.color.red_plum);
                 findViewById(R.id.circles_bckgrd).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        myTimer.cancel();
-                        waitMsg.setVisibility(View.INVISIBLE);
-                        display_msg.setText("Too soon! Try again!");
-                        retryButton.setVisibility(View.VISIBLE);
-                        exitButton.setVisibility(View.VISIBLE);
+                        failureMsg(display_msg);
                     }
                 });
             }
-            // On click listener for retry ( Restarts the instance of the screen )
-            retryButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    recreate();                   // restarts the instance of the screen
-                }
-            });
+            listeners();
 
-            // On click listener for exit ( Exits the reaction game, and goes back to the game selection page )
-            exitButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    startActivity(new Intent(ReactionGame.this, ReactionGamePage.class));
-                }
-            });
         }
     };
+
+    public void listeners() {
+        // On click listener for retry ( Restarts the instance of the screen )
+        retryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                recreate();                   // restarts the instance of the screen
+            }
+        });
+
+        // On click listener for exit ( Exits the reaction game, and goes back to the game selection page )
+        exitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ReactionGame.this, ReactionGamePage.class));
+            }
+        });
+    }
+
+    public void failureMsg(TextView display_msg) {
+        myTimer.cancel();
+        waitMsg.setVisibility(View.INVISIBLE);
+        display_msg.setText("Too soon! Try again!");
+        retryButton.setVisibility(View.VISIBLE);
+        exitButton.setVisibility(View.VISIBLE);
+    }
 }
