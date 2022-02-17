@@ -9,8 +9,6 @@ import android.widget.Button;
 
 import com.example.rng.MemoryGameDifficulty;
 import com.example.rng.R;
-import com.example.rng.ReactionDifficultyPage;
-import com.example.rng.TrailMakingTestDifficultyPage;
 
 public class HomePage extends AppCompatActivity {
 
@@ -34,7 +32,7 @@ public class HomePage extends AppCompatActivity {
         reactionGameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(HomePage.this, ReactionDifficultyPage.class));
+                startActivity(new Intent(HomePage.this, ReactionGamePage.class));
             }
         });
 
@@ -50,7 +48,7 @@ public class HomePage extends AppCompatActivity {
         tmtGameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(HomePage.this, TrailMakingTestDifficultyPage.class));
+                startActivity(new Intent(HomePage.this, TrailMakingTestPage.class));
             }
         });
 

@@ -14,6 +14,8 @@ import java.util.TimerTask;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.rng.pages.ReactionGamePage;
+
 public class ReactionGame extends AppCompatActivity {
 
     private Timer myTimer;
@@ -88,7 +90,7 @@ public class ReactionGame extends AppCompatActivity {
                 exitButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        startActivity(new Intent(ReactionGame.this, ReactionDifficultyPage.class));
+                        startActivity(new Intent(ReactionGame.this, ReactionGamePage.class));
                     }
                 });
             }
@@ -181,7 +183,7 @@ public class ReactionGame extends AppCompatActivity {
             exitButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    startActivity(new Intent(ReactionGame.this, ReactionDifficultyPage.class));
+                    startActivity(new Intent(ReactionGame.this, ReactionGamePage.class));
                 }
             });
 
@@ -218,7 +220,7 @@ public class ReactionGame extends AppCompatActivity {
             exitButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    startActivity(new Intent(ReactionGame.this, ReactionDifficultyPage.class));
+                    startActivity(new Intent(ReactionGame.this, ReactionGamePage.class));
                 }
             });
         }
@@ -254,7 +256,7 @@ public class ReactionGame extends AppCompatActivity {
             exitButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    startActivity(new Intent(ReactionGame.this, ReactionDifficultyPage.class));
+                    startActivity(new Intent(ReactionGame.this, ReactionGamePage.class));
                 }
             });
         }

@@ -1,4 +1,4 @@
-package com.example.rng;
+package com.example.rng.pages;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,7 +7,10 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class TrailMakingTestDifficultyPage extends AppCompatActivity {
+import com.example.rng.R;
+import com.example.rng.manager.TrailMakingTestMgr;
+
+public class TrailMakingTestPage extends AppCompatActivity {
 
     private Button easyButton, mediumButton, hardButton;
 
@@ -24,7 +27,7 @@ public class TrailMakingTestDifficultyPage extends AppCompatActivity {
             String value="Easy";
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(TrailMakingTestDifficultyPage.this, TrailMakingTest.class);
+                Intent i = new Intent(TrailMakingTestPage.this, TrailMakingTestMgr.class);
                 i.putExtra("levelChosen",value);
                 startActivity(i);
             }
@@ -34,7 +37,7 @@ public class TrailMakingTestDifficultyPage extends AppCompatActivity {
             String value="Medium";
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(TrailMakingTestDifficultyPage.this, TrailMakingTest.class);
+                Intent i = new Intent(TrailMakingTestPage.this, TrailMakingTestMgr.class);
                 i.putExtra("levelChosen",value);
                 startActivity(i);
             }
@@ -44,7 +47,7 @@ public class TrailMakingTestDifficultyPage extends AppCompatActivity {
             String value="Hard";
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(TrailMakingTestDifficultyPage.this, TrailMakingTest.class);
+                Intent i = new Intent(TrailMakingTestPage.this, TrailMakingTestMgr.class);
                 i.putExtra("levelChosen",value);
                 startActivity(i);
             }

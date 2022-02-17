@@ -18,7 +18,7 @@ import java.util.Date;
 public class TimeTracker {
     private String gameLevel;
 
-    static void storeTime(double timeTaken, String gameLevel, String game) {
+    public static void storeTime(double timeTaken, String gameLevel, String game) {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = null;
         if (user != null) {

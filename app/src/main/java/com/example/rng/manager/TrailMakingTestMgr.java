@@ -1,29 +1,28 @@
-package com.example.rng;
-
+package com.example.rng.manager;
 
 import android.content.Intent;
-
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.example.rng.R;
+import com.example.rng.TimeTracker;
+import com.example.rng.TrailMakingUtilities;
+import com.example.rng.pages.TrailMakingTestPage;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
+import com.example.rng.TrailMakingUtilities;
 
-public class TrailMakingTest extends AppCompatActivity {
+public class TrailMakingTestMgr extends AppCompatActivity {
     private Canvas canvas;
     private Paint paint;
     private ImageView imageView;
@@ -143,6 +142,7 @@ public class TrailMakingTest extends AppCompatActivity {
                 // startTimer
                 startTimer = System.currentTimeMillis();
 
+                TrailMakingUtilities trailMakingUtilities = new TrailMakingUtilities();
                 // initialize onClick listeners for all the buttons
                 for (int i = 0; i < 15; i++) {
 
@@ -158,8 +158,8 @@ public class TrailMakingTest extends AppCompatActivity {
 
                               if (userPath.size() > 0) {
                                   previousClick = userPath.get(userPath.size()-1);
-                                  double[] coordStartPoint = getCoordinates(findViewById(listImgView.get(previousClick)));
-                                  double[] coordEndPoint = getCoordinates(findViewById(lastClickedID));
+                                  double[] coordStartPoint = trailMakingUtilities.getCoordinates(findViewById(listImgView.get(previousClick)));
+                                  double[] coordEndPoint = trailMakingUtilities.getCoordinates(findViewById(lastClickedID));
 
                                   // Find the element to add to the users path
                                   for (int j = 0; j < listImgView.size(); j++) {
@@ -190,11 +190,12 @@ public class TrailMakingTest extends AppCompatActivity {
                                   }
 
                                   if (incorrectSequence != 1 && duplicate != 1)
-                                      drawLine(bitmap, coordStartPoint[0], coordStartPoint[1], coordEndPoint[0], coordEndPoint[1], GREEN);
+                                      trailMakingUtilities.drawLine(imageView, bitmap, coordStartPoint[0], coordStartPoint[1], coordEndPoint[0], coordEndPoint[1], GREEN);
                                   else if (incorrectSequence == 1 && duplicate != 1)
-                                      drawLine(bitmap, coordStartPoint[0], coordStartPoint[1], coordEndPoint[0], coordEndPoint[1], RED);
+                                      trailMakingUtilities.drawLine(imageView, bitmap, coordStartPoint[0], coordStartPoint[1], coordEndPoint[0], coordEndPoint[1], RED);
                                   else if (duplicate == 1 && incorrectSequence == 1)
-                                      undrawLine(listImgView, height, width);
+                                      bitmap = trailMakingUtilities.undrawLine(TrailMakingTestMgr.this, userPath, listImgView, height, width);
+                                      imageView.setImageBitmap(bitmap);
 
                               } else {
                                   // add element to path chosen by user
@@ -228,7 +229,7 @@ public class TrailMakingTest extends AppCompatActivity {
                                   exitButton.setOnClickListener(new View.OnClickListener() {
                                       @Override
                                       public void onClick(View view) {
-                                          startActivity(new Intent(TrailMakingTest.this, TrailMakingTestDifficultyPage.class));
+                                          startActivity(new Intent(TrailMakingTestMgr.this, TrailMakingTestPage.class));
                                       }
                                   });
                               }
@@ -237,97 +238,6 @@ public class TrailMakingTest extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    private void drawLine(Bitmap bitmap, double xStart, double yStart, double xEnd, double yEnd, int colour) {
-        canvas = new Canvas(bitmap);
-        paint = new Paint();
-        paint.setColor(colour);
-        paint.setStrokeWidth(5);
-        canvas.drawLine((float) xStart, (float) yStart, (float) xEnd, (float) yEnd, paint);
-        imageView.setImageBitmap(bitmap);
-    }
-
-    private double[] getCoordinates(ImageView circle) {
-        double[] coordinates = new double[2];
-
-        coordinates[0] = circle.getX() + circle.getWidth()/1.25;
-        coordinates[1] = circle.getY() + circle.getHeight()/1.25;
-
-        return coordinates;
-    }
-
-    private void undrawLine(ArrayList<Integer> listImgView, int height, int width) {
-
-        int lenOfUserPath = userPath.size();
-        int node = 0;
-        // overwrite current bitmap
-        bitmap = Bitmap.createBitmap(width,height, Bitmap.Config.ARGB_8888);
-
-        canvas = new Canvas(bitmap);
-        paint = new Paint();
-        paint.setStrokeWidth(5);
-
-        double[] coordStartPoint;
-        double[] coordEndPoint;
-        int incorrectSequence = 0;
-
-        // 1, 2, 3, 5, 7
-
-        for (int count = 0; count < userPath.size(); count ++) {
-            if (listImgView.get(userPath.get(count)) != listImgView.get(count)) {
-                node = count - 1;
-                break;
-            }
-        }
-
-        // remove values until the node that was clicked
-        if (userPath.size() >= 1 && (listImgView.get(userPath.get(0)) != listImgView.get(0)) )
-        {
-            userPath.subList(0, userPath.size()).clear();
-        }
-
-
-        for (int i = 0; i < userPath.size(); i++) {
-            if (userPath.get(i) == node) {
-                for (int n = i+1; n < lenOfUserPath; n++) {
-                    userPath.remove(userPath.size() - 1);
-                }
-                break;
-            }
-        }
-
-        // if node was the starting node, remove it as well, so that user can click another starting node value
-        if (userPath.size() == 1) {
-            userPath.remove(0);
-        }
-
-        // redraw all the lines based on the current userPath
-        for (int m = 0; m < userPath.size(); m++) {
-            // check if the sequence is correct
-            for (int j = 0; j < m+1; j++) {
-                if (listImgView.get(j) != listImgView.get(userPath.get(j))) {
-                    incorrectSequence = 1;
-                    break;
-                }
-                incorrectSequence = 0;
-            }
-
-            // to draw the lines between the nodes
-            if (m > 0) {
-                coordStartPoint = getCoordinates(findViewById(listImgView.get(userPath.get(m-1))));
-                coordEndPoint = getCoordinates(findViewById(listImgView.get(userPath.get(m))));
-
-                if (incorrectSequence == 0) {
-                    paint.setColor(GREEN);
-                } else {
-                    paint.setColor(RED);
-                }
-                canvas.drawLine((float) coordStartPoint[0], (float) coordStartPoint[1], (float) coordEndPoint[0], (float) coordEndPoint[1], paint);
-            }
-        }
-        // set current bitmap
-        imageView.setImageBitmap(bitmap);
     }
 
     private boolean checkGameOver() {
@@ -368,8 +278,7 @@ public class TrailMakingTest extends AppCompatActivity {
     }
 
     private void randomizeImagePos(ArrayList<Integer> listImgView) {
-        int randomIdx, lenOfArray;
-        double[] newCoordinates;
+        int lenOfArray;
         ArrayList<Integer> listImgViews = new ArrayList<Integer>(listImgView);
 
         lenOfArray = listImgView.size();
