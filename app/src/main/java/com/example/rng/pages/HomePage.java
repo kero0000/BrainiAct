@@ -56,7 +56,7 @@ public class HomePage extends AppCompatActivity {
         leaderboardButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(HomePage.this, LeaderboardPage.class));
+                startActivity(new Intent(HomePage.this, LeaderboardPageSelection.class));
             }
         });
 

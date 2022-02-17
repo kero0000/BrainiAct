@@ -10,60 +10,62 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RNG">
         <activity
+            android:name=".DisplayLeaderBoard"
+            android:exported="true" />
+        <activity
             android:name=".pages.HomePage"
+            android:configChanges="orientation|keyboardHidden"
             android:exported="true"
-            android:screenOrientation="landscape"
-            android:configChanges="orientation|keyboardHidden"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".pages.RegisterPage"
-            android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".pages.ReactionGamePage"
             android:screenOrientation="landscape"
             android:configChanges="orientation|keyboardHidden"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".pages.HelpPage"
+            android:configChanges="orientation|keyboardHidden"
             android:exported="true"
-            android:screenOrientation="landscape"
-            android:configChanges="orientation|keyboardHidden"/>
+            android:screenOrientation="landscape" />
         <activity
-            android:name=".pages.LeaderboardPage"
+            android:name=".pages.LeaderboardPageSelection"
+            android:configChanges="orientation|keyboardHidden"
             android:exported="true"
-            android:screenOrientation="landscape"
-            android:configChanges="orientation|keyboardHidden"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".ReactionGame"
+            android:configChanges="orientation|keyboardHidden"
             android:exported="true"
-            android:screenOrientation="landscape"
-            android:configChanges="orientation|keyboardHidden"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".manager.TrailMakingTestMgr"
             android:exported="true"
-            android:screenOrientation="landscape"
-            android:configChanges="orientation|keyboardHidden"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".MemoryGame"
+            android:configChanges="orientation|keyboardHidden"
             android:exported="true"
-            android:screenOrientation="landscape"
-            android:configChanges="orientation|keyboardHidden"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".MemoryGameDifficulty"
+            android:configChanges="orientation|keyboardHidden"
             android:exported="true"
-            android:screenOrientation="landscape"
-            android:configChanges="orientation|keyboardHidden"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".pages.TrailMakingTestPage"
             android:exported="true"
-            android:screenOrientation="landscape"
-            android:configChanges="orientation|keyboardHidden"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".pages.LoginPage"
-            android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
