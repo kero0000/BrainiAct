@@ -1,12 +1,19 @@
 package com.example.rng.manager;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Point;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -43,6 +50,15 @@ public class TrailMakingTestMgr extends AppCompatActivity {
         setContentView(R.layout.circles);
 
         imageView = findViewById(R.id.background_canvas);
+
+
+
+//        DisplayMetrics displaymetrics = new DisplayMetrics();
+//        getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+
+//        height = displaymetrics.heightPixels;
+//        width = displaymetrics.widthPixels;
+
         width = ((ConstraintLayout.LayoutParams) imageView.getLayoutParams()).width;
         height = ((ConstraintLayout.LayoutParams) imageView.getLayoutParams()).height;
         bitmap = Bitmap.createBitmap(width,height, Bitmap.Config.ARGB_8888);
