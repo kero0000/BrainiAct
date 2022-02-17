@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 import com.example.rng.MemoryGameDifficulty;
@@ -13,59 +12,38 @@ import com.example.rng.R;
 public class HomePage extends AppCompatActivity {
 
 
-    private Button reactionGameButton, memoryGameButton, tmtGameButton, leaderboardButton, helpButton;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
 
         // Initialise views
-        reactionGameButton = findViewById(R.id.reactionGameBtn);
-        memoryGameButton = findViewById(R.id.memoryGameBtn);
-        tmtGameButton = findViewById(R.id.tmtBtn);
-        leaderboardButton = findViewById(R.id.leaderboardButton);
-        helpButton = findViewById(R.id.helpButton);
+        Button reactionGameButton = findViewById(R.id.reactionGameBtn);
+        Button memoryGameButton = findViewById(R.id.memoryGameBtn);
+        Button tmtGameButton = findViewById(R.id.tmtBtn);
+        Button leaderboardButton = findViewById(R.id.leaderboardButton);
+        Button helpButton = findViewById(R.id.helpButton);
+        Button logoutButton = findViewById(R.id.logoutButton);
+
+        // v -> is basically just a lambda expression
+
+        // logout and brings user back to main page
+        logoutButton.setOnClickListener(v -> startActivity(new Intent(HomePage.this, LoginPage.class)));
 
         // Set the buttons such that they can link to another page ( This is an on click listener for reaction game )
-        reactionGameButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(HomePage.this, ReactionGamePage.class));
-            }
-        });
+        reactionGameButton.setOnClickListener(v -> startActivity(new Intent(HomePage.this, ReactionGamePage.class)));
 
         // Set the buttons such that they can link to another page ( This is an on click listener for memory game )
-        memoryGameButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(HomePage.this, MemoryGameDifficulty.class));
-            }
-        });
+        memoryGameButton.setOnClickListener(v -> startActivity(new Intent(HomePage.this, MemoryGameDifficulty.class)));
 
         // Set the buttons such that they can link to another page ( This is an on click listener for trailMaking test )
-        tmtGameButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(HomePage.this, TrailMakingTestPage.class));
-            }
-        });
+        tmtGameButton.setOnClickListener(v -> startActivity(new Intent(HomePage.this, TrailMakingTestPage.class)));
 
         // On click listener to view the leaderboards
-        leaderboardButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(HomePage.this, LeaderboardPageSelection.class));
-            }
-        });
+        leaderboardButton.setOnClickListener(v -> startActivity(new Intent(HomePage.this, LeaderboardPageSelection.class)));
 
-        helpButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(HomePage.this, HelpPage.class));
-            }
-        });
+        // help me
+        helpButton.setOnClickListener(v ->  startActivity(new Intent(HomePage.this, HelpPage.class)));
 
     }
 }

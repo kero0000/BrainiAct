@@ -11,8 +11,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class LoginMgr extends AppCompatActivity {
-    private String email, password;
-    private FirebaseAuth mAuth;
     Context c;
     EditText editTextEmail, editTextPassword;
 
@@ -27,12 +25,10 @@ public class LoginMgr extends AppCompatActivity {
     }
 
     public void userLogin(verifyCallBack verifyUser) {
-        email = editTextEmail.getText().toString().trim();
-        password = editTextPassword.getText().toString().trim();
-        mAuth = FirebaseAuth.getInstance();
+        String email = editTextEmail.getText().toString().trim();
+        String password = editTextPassword.getText().toString().trim();
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
         boolean[] verified = new boolean[2];
-        verified[0] = false;
-        verified[1] = false;
 
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
