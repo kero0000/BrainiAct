@@ -15,12 +15,11 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.rng.R;
 import com.example.rng.TimeTracker;
-import com.example.rng.TrailMakingUtilities;
+import com.example.rng.utilities.TrailMakingUtilities;
 import com.example.rng.pages.TrailMakingTestPage;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
-import com.example.rng.TrailMakingUtilities;
 
 public class TrailMakingTestMgr extends AppCompatActivity {
     private Canvas canvas;

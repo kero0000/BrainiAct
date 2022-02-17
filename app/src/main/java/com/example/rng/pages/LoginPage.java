@@ -15,18 +15,8 @@ import android.widget.EditText;
 
 import com.example.rng.manager.LoginMgr;
 import com.example.rng.R;
-import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginPage extends AppCompatActivity {
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        startActivity(new Intent(MainActivity.this, MainPage.class));
-//    }
-    private EditText editTextEmail, editTextPassword;
-    private FirebaseAuth mAuth;
-    private Button buttonLogin, buttonRegister;
-
 
     // Makes keyboard disappear when you press somewhere else
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -34,10 +24,10 @@ public class LoginPage extends AppCompatActivity {
     public boolean dispatchTouchEvent(MotionEvent ev) {
         View view = getCurrentFocus();
         if (view != null && (ev.getAction() == MotionEvent.ACTION_UP || ev.getAction() == MotionEvent.ACTION_MOVE) && view instanceof EditText && !view.getClass().getName().startsWith("android.webkit.")) {
-            int scrcoords[] = new int[2];
-            view.getLocationOnScreen(scrcoords);
-            float x = ev.getRawX() + view.getLeft() - scrcoords[0];
-            float y = ev.getRawY() + view.getTop() - scrcoords[1];
+            int[] screenCoords = new int[2];
+            view.getLocationOnScreen(screenCoords);
+            float x = ev.getRawX() + view.getLeft() - screenCoords[0];
+            float y = ev.getRawY() + view.getTop() - screenCoords[1];
             if (x < view.getLeft() || x > view.getRight() || y < view.getTop() || y > view.getBottom())
                 ((InputMethodManager)this.getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow((this.getWindow().getDecorView().getApplicationWindowToken()), 0);
         }
@@ -49,32 +39,25 @@ public class LoginPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mAuth = FirebaseAuth.getInstance();
-        buttonLogin = findViewById(R.id.buttonLogin);
-        buttonRegister = findViewById(R.id.buttonRegister);
-        editTextEmail = findViewById(R.id.editTextEmailAddress);
-        editTextPassword = findViewById(R.id.editTextPassword);
+        Button buttonLogin = findViewById(R.id.buttonLogin);
+        Button buttonRegister = findViewById(R.id.buttonRegister);
+        EditText editTextEmail = findViewById(R.id.editTextEmailAddress);
+        EditText editTextPassword = findViewById(R.id.editTextPassword);
 
-        buttonRegister.setOnClickListener(new View.OnClickListener() {
+        // Redirect to register page
+        buttonRegister.setOnClickListener(v -> startActivity(new Intent(LoginPage.this, RegisterPage.class)));
+
+        // Redirects to homepage upon successful sign in
+        LoginMgr loginMgr = new LoginMgr(getApplicationContext(), editTextEmail, editTextPassword);
+        buttonLogin.setOnClickListener(v -> loginMgr.userLogin(new LoginMgr.verifyCallBack(){
             @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LoginPage.this, RegisterPage.class));
+            public void verify(boolean[] verified) {
+                if (verified[0] && verified[1]) {
+                    startActivity(new Intent(LoginPage.this, HomePage.class));
+                }
             }
-        });
+        }));
 
-        buttonLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                LoginMgr loginMgr = new LoginMgr(getApplicationContext(), editTextEmail, editTextPassword);
-                loginMgr.userLogin(new LoginMgr.verifyCallBack(){
-                    @Override
-                    public void verify(boolean[] verified) {
-                        if (verified[0] && verified[1]) {
-                            startActivity(new Intent(LoginPage.this, HomePage.class));
-                        }
-                    }
-                });}
-        });
     }
 
 }

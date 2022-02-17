@@ -1,22 +1,15 @@
-package com.example.rng;
+package com.example.rng.utilities;
 
 import android.app.Activity;
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.util.Log;
 import android.widget.ImageView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.ArrayList;
 
 public class TrailMakingUtilities extends AppCompatActivity {
-
-    private int GREEN = Color.GREEN;
-    private int RED = Color.RED;
 
 
     public void drawLine(ImageView imageView, Bitmap bitmap, double xStart, double yStart, double xEnd, double yEnd, int colour) {
@@ -45,14 +38,14 @@ public class TrailMakingUtilities extends AppCompatActivity {
         int incorrectSequence = 0;
 
         for (int count = 0; count < userPath.size(); count ++) {
-            if (listImgView.get(userPath.get(count)) != listImgView.get(count)) {
+            if (!listImgView.get(userPath.get(count)).equals(listImgView.get(count))) {
                 node = count - 1;
                 break;
             }
         }
 
         // remove values until the node that was clicked
-        if (userPath.size() >= 1 && (listImgView.get(userPath.get(0)) != listImgView.get(0)) )
+        if (userPath.size() >= 1 && (!listImgView.get(userPath.get(0)).equals(listImgView.get(0))) )
         {
             userPath.subList(0, userPath.size()).clear();
         }
@@ -90,8 +83,10 @@ public class TrailMakingUtilities extends AppCompatActivity {
 
 
                 if (incorrectSequence == 0) {
+                    int GREEN = Color.GREEN;
                     paint.setColor(GREEN);
                 } else {
+                    int RED = Color.RED;
                     paint.setColor(RED);
                 }
 
