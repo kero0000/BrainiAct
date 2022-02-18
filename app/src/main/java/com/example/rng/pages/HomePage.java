@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
+import com.example.rng.HealthTrackerPage;
 import com.example.rng.MemoryGameDifficulty;
 import com.example.rng.R;
 
@@ -24,6 +25,7 @@ public class HomePage extends AppCompatActivity {
         Button leaderboardButton = findViewById(R.id.leaderboardButton);
         Button helpButton = findViewById(R.id.helpButton);
         Button logoutButton = findViewById(R.id.logoutButton);
+        Button healthTrackerButton = findViewById(R.id.healthTrackerBtn);
 
         // v -> is basically just a lambda expression
 
@@ -44,6 +46,9 @@ public class HomePage extends AppCompatActivity {
 
         // help me
         helpButton.setOnClickListener(v ->  startActivity(new Intent(HomePage.this, HelpPage.class)));
+
+
+        healthTrackerButton.setOnClickListener(v ->  startActivity(new Intent(HomePage.this, HealthTrackerPage.class)));
 
     }
 }

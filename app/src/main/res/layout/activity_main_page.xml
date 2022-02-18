@@ -37,7 +37,7 @@
         app:srcCompat="@drawable/banner_logo" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/healthTrackerBtn"
         android:layout_width="168dp"
         android:layout_height="50dp"
         android:layout_marginStart="328dp"

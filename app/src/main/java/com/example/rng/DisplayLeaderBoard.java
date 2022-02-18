@@ -29,6 +29,8 @@ public class DisplayLeaderBoard extends AppCompatActivity {
         TextView textViewMedium = findViewById(R.id.textViewMedium);
         TextView textView5 = findViewById(R.id.textView5);
 
+        TextView yourBest = findViewById(R.id.yourBestScore);
+        TextView yourBestScore = findViewById(R.id.bestScore);
 
         String game = getIntent().getStringExtra("game");
 
@@ -36,10 +38,28 @@ public class DisplayLeaderBoard extends AppCompatActivity {
             case "TMT":
 
                 // first callback for displaying easy high score's percentile
+                MyCallBack myCallbackYourBestTMTEasy = new MyCallBack() {
+                    @Override
+                    public void onCallback(Long value) {
+                        yourBestScore.setText(String.valueOf(value));
+                    }
+
+                    @Override
+                    public void onCallback(String s) {
+                        yourBestScore.setText(s);
+                    }
+                };
+
+                // first callback for displaying easy high score's percentile
                 MyCallBack myCallbackTMTEasy = new MyCallBack() {
                     @Override
                     public void onCallback(Long value) {
                         textViewEasy.setText(String.valueOf(value));
+                    }
+
+                    @Override
+                    public void onCallback(String s) {
+                        textViewEasy.setText(s);
                     }
                 };
                 // callback for displaying medium high score's percentile
@@ -48,12 +68,22 @@ public class DisplayLeaderBoard extends AppCompatActivity {
                     public void onCallback(Long value) {
                         textViewMedium.setText(String.valueOf(value));
                     }
+
+                    @Override
+                    public void onCallback(String s) {
+                        textViewEasy.setText(s);
+                    }
                 };
                 // callback for displaying Hard high score's percentile
                 MyCallBack myCallbackTMTHard = new MyCallBack() {
                     @Override
                     public void onCallback(Long value) {
                         textViewHard.setText(String.valueOf(value));
+                    }
+
+                    @Override
+                    public void onCallback(String s) {
+                        textViewEasy.setText(s);
                     }
                 };
 
@@ -63,6 +93,7 @@ public class DisplayLeaderBoard extends AppCompatActivity {
                     int count = 0;
                     double percentile;
                     boolean check = true;
+                    long highScore = 0;
 
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -72,12 +103,14 @@ public class DisplayLeaderBoard extends AppCompatActivity {
                             }
                             if (childsnapshot.getKey().equals(uid)) {
                                 Long currentHighScore = childsnapshot.getValue(TMTHighScoreRecord.class).getHighScoreEasy();
+                                highScore = currentHighScore;
                                 check = false;
                             }
                         }
                         percentile = snapshot.getChildrenCount() - count;
                         percentile = (percentile / snapshot.getChildrenCount()) * 100;
                         myCallbackTMTEasy.onCallback((long) percentile);
+                        myCallbackYourBestTMTEasy.onCallback((long)highScore);
                     }
 
                     @Override
@@ -152,6 +185,11 @@ public class DisplayLeaderBoard extends AppCompatActivity {
                     public void onCallback(Long value) {
                         textViewEasy.setText(String.valueOf(value));
                     }
+
+                    @Override
+                    public void onCallback(String s) {
+                        textViewEasy.setText(s);
+                    }
                 };
 
                 // callback for displaying Hard high score's percentile
@@ -159,6 +197,11 @@ public class DisplayLeaderBoard extends AppCompatActivity {
                     @Override
                     public void onCallback(Long value) {
                         textViewHard.setText(String.valueOf(value));
+                    }
+
+                    @Override
+                    public void onCallback(String s) {
+                        textViewEasy.setText(s);
                     }
                 };
 
@@ -227,6 +270,11 @@ public class DisplayLeaderBoard extends AppCompatActivity {
                     public void onCallback(Long value) {
                         textViewEasy.setText(String.valueOf(value));
                     }
+
+                    @Override
+                    public void onCallback(String s) {
+                        textViewEasy.setText(s);
+                    }
                 };
 
                 // callback for displaying Hard high score's percentile
@@ -234,6 +282,11 @@ public class DisplayLeaderBoard extends AppCompatActivity {
                     @Override
                     public void onCallback(Long value) {
                         textViewHard.setText(String.valueOf(value));
+                    }
+
+                    @Override
+                    public void onCallback(String s) {
+                        textViewEasy.setText(s);
                     }
                 };
 

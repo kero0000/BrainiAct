@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/GhostWhite">
+    android:background="@color/Black">
 
     <TextView
         android:id="@+id/stageTxt"
         android:layout_width="275dp"
         android:layout_height="24dp"
         android:textAlignment="center"
+        android:textColor="#F3F3F3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,6 +23,7 @@
         android:layout_width="275dp"
         android:layout_height="24dp"
         android:textAlignment="center"
+        android:textColor="#FAF6F6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +36,7 @@
         android:layout_height="55dp"
         android:text="Memory Game"
         android:textAlignment="center"
-        android:textColor="@color/Black"
+        android:textColor="@color/GhostWhite"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
