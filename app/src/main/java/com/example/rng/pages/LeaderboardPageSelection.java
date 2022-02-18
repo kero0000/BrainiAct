@@ -19,10 +19,33 @@ public class LeaderboardPageSelection extends AppCompatActivity {
         setContentView(R.layout.leaderboard_selection_page);
 
         Button TMT = findViewById(R.id.TMT);
+        Button reaction = findViewById(R.id.reactionEasy);
+        Button memory = findViewById(R.id.memoryGameButton);
+
         TMT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LeaderboardPageSelection.this, DisplayLeaderBoard.class));
+                Intent i = new Intent(LeaderboardPageSelection.this, DisplayLeaderBoard.class);
+                i.putExtra("game", "TMT");
+                startActivity(i);
+            }
+        });
+
+        reaction.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(LeaderboardPageSelection.this, DisplayLeaderBoard.class);
+                i.putExtra("game", "reaction");
+                startActivity(i);
+            }
+        });
+
+        memory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(LeaderboardPageSelection.this, DisplayLeaderBoard.class);
+                i.putExtra("game", "memory");
+                startActivity(i);
             }
         });
     }

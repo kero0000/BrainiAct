@@ -98,6 +98,7 @@ public class TrailMakingTestMgr extends AppCompatActivity {
                 ));
 
         String gameLevel = getIntent().getStringExtra("levelChosen"); //The key argument here must match that used in the other activity
+        gameDifficulty = "easy";
 
         if (gameLevel.equals("Medium"))
         {
