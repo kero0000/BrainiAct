@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -53,11 +54,13 @@ public class TrailMakingTestMgr extends AppCompatActivity {
 
 
 
-//        DisplayMetrics displaymetrics = new DisplayMetrics();
-//        getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+        DisplayMetrics displaymetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
 
 //        height = displaymetrics.heightPixels;
 //        width = displaymetrics.widthPixels;
+        imageView.getLayoutParams().height= displaymetrics.heightPixels;
+        imageView.getLayoutParams().width= displaymetrics.widthPixels;
 
         width = ((ConstraintLayout.LayoutParams) imageView.getLayoutParams()).width;
         height = ((ConstraintLayout.LayoutParams) imageView.getLayoutParams()).height;

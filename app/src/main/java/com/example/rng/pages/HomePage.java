@@ -45,7 +45,7 @@ public class HomePage extends AppCompatActivity {
         leaderboardButton.setOnClickListener(v -> startActivity(new Intent(HomePage.this, LeaderboardPageSelection.class)));
 
         // help me
-        helpButton.setOnClickListener(v ->  startActivity(new Intent(HomePage.this, HelpPage.class)));
+        helpButton.setOnClickListener(v ->  startActivity(new Intent(HomePage.this, HelpPageSelection.class)));
 
 
         healthTrackerButton.setOnClickListener(v ->  startActivity(new Intent(HomePage.this, HealthTrackerPage.class)));

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.rng">
 
     <application
@@ -31,7 +32,17 @@
             android:configChanges="orientation|keyboardHidden"
             android:exported="true" />
         <activity
-            android:name=".pages.HelpPage"
+            android:name=".pages.HelpPageSelection"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+        <activity
+            android:name=".pages.HealthTrackerPage"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+        <activity
+            android:name=".pages.TMTHelpPage"
             android:configChanges="orientation|keyboardHidden"
             android:exported="true"
             android:screenOrientation="landscape" />

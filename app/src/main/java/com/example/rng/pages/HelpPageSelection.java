@@ -10,22 +10,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.rng.DisplayLeaderBoard;
 import com.example.rng.R;
 
-public class LeaderboardPageSelection extends AppCompatActivity {
+public class HelpPageSelection extends AppCompatActivity{
 
     // Main screen for leaderboards
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.leaderboard_selection_page);
+        setContentView(R.layout.help_selection_page);
 
-        Button TMT = findViewById(R.id.TMTBtn);
-        Button reaction = findViewById(R.id.reactionBtn);
-        Button memory = findViewById(R.id.memoryGameButton);
+        Button TMT = findViewById(R.id.TMTBtnHelp);
+        Button reaction = findViewById(R.id.reactionBtnHelp);
+        Button memory = findViewById(R.id.memoryGameButtonHelp);
 
-        TMT.setOnClickListener(new View.OnClickListener() {
+        memory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(LeaderboardPageSelection.this, DisplayLeaderBoard.class);
+                Intent i = new Intent(HelpPageSelection.this, DisplayLeaderBoard.class);
                 i.putExtra("game", "TMT");
                 startActivity(i);
             }
@@ -34,16 +34,16 @@ public class LeaderboardPageSelection extends AppCompatActivity {
         reaction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(LeaderboardPageSelection.this, DisplayLeaderBoard.class);
+                Intent i = new Intent(HelpPageSelection.this, DisplayLeaderBoard.class);
                 i.putExtra("game", "reaction");
                 startActivity(i);
             }
         });
 
-        memory.setOnClickListener(new View.OnClickListener() {
+        TMT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(LeaderboardPageSelection.this, DisplayLeaderBoard.class);
+                Intent i = new Intent(HelpPageSelection.this, TMTHelpPage.class);
                 i.putExtra("game", "memory");
                 startActivity(i);
             }
@@ -51,3 +51,5 @@ public class LeaderboardPageSelection extends AppCompatActivity {
     }
 
 }
+
+

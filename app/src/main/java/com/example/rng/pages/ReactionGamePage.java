@@ -18,7 +18,7 @@ public class ReactionGamePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.reaction_game_selection);
 
-        easyButton = findViewById(R.id.reactionEasy);
+        easyButton = findViewById(R.id.reactionBtn);
         hardButton = findViewById(R.id.reactionHard);
 
         easyButton.setOnClickListener(new View.OnClickListener() {
