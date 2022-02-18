@@ -18,7 +18,7 @@ public class LeaderboardPageSelection extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.leaderboard_selection_page);
 
-        Button TMT = findViewById(R.id.TMTBtn);
+        Button TMT = findViewById(R.id.TMT);
         Button reaction = findViewById(R.id.reactionBtn);
         Button memory = findViewById(R.id.memoryGameButton);
 

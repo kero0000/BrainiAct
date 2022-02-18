@@ -7,8 +7,6 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.rng.pages.LeaderboardPageSelection;
-
 public class HealthTrackerPage  extends AppCompatActivity {
 
     // Main screen for leaderboards
@@ -17,7 +15,7 @@ public class HealthTrackerPage  extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.leaderboard_selection_page);
         Button TMT = findViewById(R.id.TMT);
-        Button reaction = findViewById(R.id.reactionEasy);
+        Button reaction = findViewById(R.id.reactionBtn);
         Button memory = findViewById(R.id.memoryGameButton);
 
         TMT.setOnClickListener(new View.OnClickListener() {

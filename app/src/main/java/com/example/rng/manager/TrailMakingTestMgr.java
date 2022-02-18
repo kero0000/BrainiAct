@@ -57,8 +57,6 @@ public class TrailMakingTestMgr extends AppCompatActivity {
         DisplayMetrics displaymetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
 
-//        height = displaymetrics.heightPixels;
-//        width = displaymetrics.widthPixels;
         imageView.getLayoutParams().height= displaymetrics.heightPixels;
         imageView.getLayoutParams().width= displaymetrics.widthPixels;
 

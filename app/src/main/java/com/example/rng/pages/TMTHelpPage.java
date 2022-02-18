@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -45,6 +46,12 @@ public class TMTHelpPage extends AppCompatActivity {
         setContentView(R.layout.tmt_help_page);
 
         imageView = findViewById(R.id.background_canvas);
+        DisplayMetrics displaymetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+
+        imageView.getLayoutParams().height= displaymetrics.heightPixels;
+        imageView.getLayoutParams().width= displaymetrics.widthPixels;
+
         width = ((ConstraintLayout.LayoutParams) imageView.getLayoutParams()).width;
         height = ((ConstraintLayout.LayoutParams) imageView.getLayoutParams()).height;
         bitmap = Bitmap.createBitmap(width,height, Bitmap.Config.ARGB_8888);

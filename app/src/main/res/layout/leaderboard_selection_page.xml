@@ -7,7 +7,7 @@
     android:background="#101010">
 
     <Button
-        android:id="@+id/TMTBtn"
+        android:id="@+id/TMT"
         android:layout_width="115dp"
         android:layout_height="72dp"
         android:layout_marginTop="251dp"
@@ -41,7 +41,7 @@
         android:layout_marginBottom="88dp"
         android:text="@string/Memory"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/TMTBtn"
+        app:layout_constraintEnd_toStartOf="@+id/TMT"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/reactionBtn"
         app:layout_constraintTop_toTopOf="parent" />
