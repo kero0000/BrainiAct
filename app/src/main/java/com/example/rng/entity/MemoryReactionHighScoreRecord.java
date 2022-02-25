@@ -1,8 +1,15 @@
-package com.example.rng;
+package com.example.rng.entity;
 
 public class MemoryReactionHighScoreRecord {
     private Long HighScoreEasy;
     private Long HighScoreHard;
+
+    public MemoryReactionHighScoreRecord(Long HighScoreEasy, Long HighScoreHard){
+        this.HighScoreEasy = HighScoreEasy;
+        this.HighScoreHard = HighScoreHard;
+    }
+
+    public MemoryReactionHighScoreRecord(){}
 
     public void setHighScoreEasy(Long HighScoreEasy){
         this.HighScoreEasy = HighScoreEasy;

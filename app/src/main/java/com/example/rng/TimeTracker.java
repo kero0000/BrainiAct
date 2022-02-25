@@ -2,6 +2,8 @@ package com.example.rng;
 
 import androidx.annotation.NonNull;
 
+import com.example.rng.entity.MemoryReactionHighScoreRecord;
+import com.example.rng.entity.TMTHighScoreRecord;
 import com.example.rng.entity.scoreRecord;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;

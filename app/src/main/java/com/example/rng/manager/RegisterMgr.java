@@ -7,6 +7,8 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 
+import com.example.rng.entity.MemoryReactionHighScoreRecord;
+import com.example.rng.entity.TMTHighScoreRecord;
 import com.example.rng.entity.User;
 import com.example.rng.pages.RegisterPage;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -59,7 +61,23 @@ public class RegisterMgr extends RegisterPage {
                             progressBar.setVisibility(View.GONE);
                         }
                     });
-                }else{
+
+                    TMTHighScoreRecord tmtHighScoreRecord = new TMTHighScoreRecord(Long.MAX_VALUE, Long.MAX_VALUE, Long.MAX_VALUE);
+
+                    FirebaseDatabase.getInstance().getReference("TMTHighScore")
+                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(tmtHighScoreRecord);
+
+                    MemoryReactionHighScoreRecord memoryReactionHighScoreRecord = new MemoryReactionHighScoreRecord(Long.MAX_VALUE, Long.MAX_VALUE);
+
+                    FirebaseDatabase.getInstance().getReference("reactionHighScore")
+                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(memoryReactionHighScoreRecord);
+
+                    FirebaseDatabase.getInstance().getReference("memoryHighScore")
+                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(memoryReactionHighScoreRecord);
+
+
+                }
+                else{
                     Toast.makeText(parentContext, "Failed to register!", Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.GONE);
                 }

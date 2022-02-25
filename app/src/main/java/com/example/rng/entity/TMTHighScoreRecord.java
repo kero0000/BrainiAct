@@ -1,9 +1,17 @@
-package com.example.rng;
+package com.example.rng.entity;
 
 public class TMTHighScoreRecord {
     private Long HighScoreEasy;
     private Long HighScoreMedium;
     private Long HighScoreHard;
+
+    public TMTHighScoreRecord(Long HighScoreEasy, Long HighScoreMedium, Long HighScoreHard){
+        this.HighScoreEasy = HighScoreEasy;
+        this.HighScoreHard = HighScoreHard;
+        this.HighScoreMedium = HighScoreMedium;
+    }
+
+    TMTHighScoreRecord(){}
 
     public void setHighScoreEasy(Long HighScoreEasy){
         this.HighScoreEasy = HighScoreEasy;
