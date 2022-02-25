@@ -91,14 +91,15 @@ public class RegisterMgr extends RegisterPage {
                     FirebaseDatabase.getInstance().getReference("TMTHighScore")
                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(tmtHighScoreRecord);
 
-                    MemoryReactionHighScoreRecord memoryReactionHighScoreRecord = new MemoryReactionHighScoreRecord(Long.MAX_VALUE, Long.MAX_VALUE);
+                    MemoryReactionHighScoreRecord reactionHighScoreRecord = new MemoryReactionHighScoreRecord(Long.MAX_VALUE, Long.MAX_VALUE);
 
                     FirebaseDatabase.getInstance().getReference("reactionHighScore")
-                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(memoryReactionHighScoreRecord);
+                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(reactionHighScoreRecord);
+
+                    MemoryReactionHighScoreRecord memoryHighScoreRecord = new MemoryReactionHighScoreRecord(Long.MIN_VALUE, Long.MIN_VALUE);
 
                     FirebaseDatabase.getInstance().getReference("memoryHighScore")
-                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(memoryReactionHighScoreRecord);
-
+                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(memoryHighScoreRecord);
 
                 }
                 else{
