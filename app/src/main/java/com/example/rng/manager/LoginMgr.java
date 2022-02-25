@@ -10,6 +10,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class LoginMgr extends AppCompatActivity {
     Context c;
     EditText editTextEmail, editTextPassword;
@@ -27,6 +30,26 @@ public class LoginMgr extends AppCompatActivity {
     public void userLogin(verifyCallBack verifyUser) {
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
+
+        // this will check for 8-64 character with at least 3 numbers or special characters
+        String passwordRegex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&.()–[{}]:;',?/*~$^+=<>]).{8,20}$";
+        Pattern pattern = Pattern.compile(passwordRegex);
+        // this is inside your password check function
+        Matcher match = pattern.matcher(password);
+
+        if (email.equals("") || password.equals("")){
+            Toast.makeText(c, "All field must be entered!", Toast.LENGTH_LONG).show();
+            return;
+        }
+        if (!email.endsWith("@gmail.com")){
+            Toast.makeText(c, "Invalid email entered", Toast.LENGTH_LONG).show();
+            return;
+        }
+        if (!match.matches()){
+            Toast.makeText(c, "Invalid password entered", Toast.LENGTH_LONG).show();
+            return;
+        }
+
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         boolean[] verified = new boolean[2];
 

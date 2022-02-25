@@ -18,6 +18,12 @@ import com.example.rng.R;
 
 public class LoginPage extends AppCompatActivity {
 
+
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(false);
+    }
+
     // Makes keyboard disappear when you press somewhere else
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -48,6 +54,7 @@ public class LoginPage extends AppCompatActivity {
         buttonRegister.setOnClickListener(v -> startActivity(new Intent(LoginPage.this, RegisterPage.class)));
 
         // Redirects to homepage upon successful sign in
+
         LoginMgr loginMgr = new LoginMgr(getApplicationContext(), editTextEmail, editTextPassword);
         buttonLogin.setOnClickListener(v -> loginMgr.userLogin(new LoginMgr.verifyCallBack(){
             @Override

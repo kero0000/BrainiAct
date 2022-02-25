@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.Button;
 
 import com.example.rng.HealthTrackerPage;
@@ -11,7 +12,6 @@ import com.example.rng.MemoryGameDifficulty;
 import com.example.rng.R;
 
 public class HomePage extends AppCompatActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

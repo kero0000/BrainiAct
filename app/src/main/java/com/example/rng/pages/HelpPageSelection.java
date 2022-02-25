@@ -22,20 +22,20 @@ public class HelpPageSelection extends AppCompatActivity{
         Button reaction = findViewById(R.id.reactionBtnHelp);
         Button memory = findViewById(R.id.memoryGameButtonHelp);
 
-        memory.setOnClickListener(new View.OnClickListener() {
+        reaction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(HelpPageSelection.this, DisplayLeaderBoard.class);
-                i.putExtra("game", "TMT");
+                Intent i = new Intent(HelpPageSelection.this, ReactionHelpPage.class);
+                //i.putExtra("game", "reaction");
                 startActivity(i);
             }
         });
 
-        reaction.setOnClickListener(new View.OnClickListener() {
+        memory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(HelpPageSelection.this, DisplayLeaderBoard.class);
-                i.putExtra("game", "reaction");
+                Intent i = new Intent(HelpPageSelection.this, MemoryHelpPage.class);
+                i.putExtra("game", "memory");
                 startActivity(i);
             }
         });
@@ -44,7 +44,7 @@ public class HelpPageSelection extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(HelpPageSelection.this, TMTHelpPage.class);
-                i.putExtra("game", "memory");
+               // i.putExtra("game", "TMT");
                 startActivity(i);
             }
         });

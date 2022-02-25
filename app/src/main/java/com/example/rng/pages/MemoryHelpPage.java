@@ -4,10 +4,12 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.rng.R;
 
-public class TMTHelpPage extends AppCompatActivity {
+public class MemoryHelpPage extends AppCompatActivity {
 
 
     @SuppressLint("SetTextI18n")
@@ -19,12 +21,12 @@ public class TMTHelpPage extends AppCompatActivity {
         TextView headerTextView = findViewById(R.id.headerText);
 
 
-        headerTextView.setText(" Instructions for Trail Making test \n" +
-                "1. Click on the nodes in increasing order \n" +
-                "2. For Easy mode, nodes would be numbered from 1 to 15 \n" +
-                "3. For Medium mode, nodes would be numbered from A to O \n" +
-                "4. For Hard mode, nodes would be numbered from 1 to 8, and alphabets from A to G \n" +
-                "nodes for hard mode should be ordered as such, 1->A->2->B and so on...");
+        headerTextView.setText(" Instructions for Memory Game\n" +
+                "1. The screen will first display blinking squares.\n" +
+                "2. Remember the blinking squares' pattern.\n" +
+                "3. Click on the squares that was blinking previously.\n" +
+                "4. You lose a life from clicking the wrong square.\n" +
+                "5. Losing 3 lives ends the game.");
 
         headerTextView.setMovementMethod(new ScrollingMovementMethod());
     }

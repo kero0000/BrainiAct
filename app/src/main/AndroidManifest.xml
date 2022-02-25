@@ -37,12 +37,22 @@
             android:configChanges="orientation|keyboardHidden"
             android:exported="true" />
         <activity
-            android:name=".pages.HealthTrackerPage"
+            android:name="HealthTrackerPage"
             android:screenOrientation="landscape"
             android:configChanges="orientation|keyboardHidden"
             android:exported="true" />
         <activity
             android:name=".pages.TMTHelpPage"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".pages.MemoryHelpPage"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".pages.ReactionHelpPage"
             android:configChanges="orientation|keyboardHidden"
             android:exported="true"
             android:screenOrientation="landscape" />
@@ -57,7 +67,7 @@
             android:exported="true"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".ReactionGame"
+            android:name=".manager.ReactionGameMgr"
             android:configChanges="orientation|keyboardHidden"
             android:exported="true"
             android:screenOrientation="landscape" />

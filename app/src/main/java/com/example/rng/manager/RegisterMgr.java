@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
+import java.util.regex.*;
 
 
 public class RegisterMgr extends RegisterPage {
@@ -37,6 +38,29 @@ public class RegisterMgr extends RegisterPage {
         String password = editTextPassword.getText().toString().trim();
         String name = editTextName.getText().toString().trim();
         String age = editTextAge.getText().toString().trim();
+
+        // this will check for 8-64 character with at least 3 numbers or special characters
+        String passwordRegex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&.()–[{}]:;',?/*~$^+=<>]).{8,20}$";
+        Pattern pattern = Pattern.compile(passwordRegex);
+        // this is inside your password check function
+        Matcher match = pattern.matcher(password);
+
+        if (email.equals("") || password.equals("") || name.equals("") || age.equals("")){
+            Toast.makeText(parentContext, "All field must be entered!", Toast.LENGTH_LONG).show();
+            return;
+        }
+        if (!email.endsWith("@gmail.com")){
+            Toast.makeText(parentContext, "Invalid email entered", Toast.LENGTH_LONG).show();
+            return;
+        }
+        if (Integer.valueOf(age) < 5 || Integer.valueOf(age) > 99){
+            Toast.makeText(parentContext, "Invalid age entered", Toast.LENGTH_LONG).show();
+            return;
+        }
+        if (!match.matches()){
+            Toast.makeText(parentContext, "Invalid password entered", Toast.LENGTH_LONG).show();
+            return;
+        }
 
         progressBar.setVisibility(View.VISIBLE);
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {

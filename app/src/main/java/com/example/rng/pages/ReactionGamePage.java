@@ -8,7 +8,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.rng.R;
-import com.example.rng.ReactionGame;
+import com.example.rng.manager.ReactionGameMgr;
 
 public class ReactionGamePage extends AppCompatActivity {
     private Button easyButton, hardButton;
@@ -25,7 +25,7 @@ public class ReactionGamePage extends AppCompatActivity {
             String value = "Easy";
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(ReactionGamePage.this, ReactionGame.class);
+                Intent i = new Intent(ReactionGamePage.this, ReactionGameMgr.class);
                 i.putExtra("levelChosen", value);
                 startActivity(i);
             }
@@ -35,7 +35,7 @@ public class ReactionGamePage extends AppCompatActivity {
             String value = "Hard";
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(ReactionGamePage.this, ReactionGame.class);
+                Intent i = new Intent(ReactionGamePage.this, ReactionGameMgr.class);
                 i.putExtra("levelChosen", value);
                 startActivity(i);
             }

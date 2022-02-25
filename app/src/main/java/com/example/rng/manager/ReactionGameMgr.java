@@ -1,4 +1,4 @@
-package com.example.rng;
+package com.example.rng.manager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,9 +14,11 @@ import java.util.TimerTask;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.rng.R;
+import com.example.rng.TimeTracker;
 import com.example.rng.pages.ReactionGamePage;
 
-public class ReactionGame extends AppCompatActivity {
+public class ReactionGameMgr extends AppCompatActivity {
 
     private Timer myTimer;
     private int flag = 0;
@@ -26,8 +28,12 @@ public class ReactionGame extends AppCompatActivity {
     private String gameDifficulty;
     private TextView display_msg;
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.reaction_game_page);
         display_msg = (TextView) findViewById(R.id.display_msg);
@@ -194,7 +200,7 @@ public class ReactionGame extends AppCompatActivity {
         exitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ReactionGame.this, ReactionGamePage.class));
+                startActivity(new Intent(ReactionGameMgr.this, ReactionGamePage.class));
             }
         });
     }
