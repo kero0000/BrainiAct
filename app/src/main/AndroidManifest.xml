@@ -62,11 +62,6 @@
             android:exported="true"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".HealthTrackerPage"
-            android:configChanges="orientation|keyboardHidden"
-            android:exported="true"
-            android:screenOrientation="landscape" />
-        <activity
             android:name=".manager.ReactionGameMgr"
             android:configChanges="orientation|keyboardHidden"
             android:exported="true"
@@ -76,12 +71,12 @@
             android:exported="true"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".MemoryGame"
+            android:name=".manager.MemoryGameMgr"
             android:configChanges="orientation|keyboardHidden"
             android:exported="true"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".MemoryGameDifficulty"
+            android:name=".pages.MemoryGamePage"
             android:configChanges="orientation|keyboardHidden"
             android:exported="true"
             android:screenOrientation="landscape" />

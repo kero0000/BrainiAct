@@ -1,4 +1,4 @@
-package com.example.rng;
+package com.example.rng.manager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -14,19 +14,23 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 
+import com.example.rng.entity.MemoryUser;
+import com.example.rng.R;
+import com.example.rng.pages.MemoryGamePage;
+
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MemoryGame extends AppCompatActivity {
+public class MemoryGameMgr extends AppCompatActivity {
     // define constants and model instances
     private static final int max_sequence_size = 30;
     private static boolean buttonDisabled = false;
 
     private String gameDifficulty;
 
-    protected MemorySequence expected = new MemorySequence(max_sequence_size);
-    protected MemorySequence response = new MemorySequence();
+    protected MemorySequenceMgr expected = new MemorySequenceMgr(max_sequence_size);
+    protected MemorySequenceMgr response = new MemorySequenceMgr();
     protected MemoryUser memoryUser = new MemoryUser();
 
     protected int level = 0;
@@ -55,7 +59,7 @@ public class MemoryGame extends AppCompatActivity {
         backButton.setOnClickListener( new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MemoryGame.this, MemoryGameDifficulty.class);
+                Intent intent = new Intent(MemoryGameMgr.this, MemoryGamePage.class);
                 startActivity(intent);
             }
 
@@ -63,7 +67,7 @@ public class MemoryGame extends AppCompatActivity {
         returnButton.setOnClickListener( new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MemoryGame.this, MemoryGameDifficulty.class);
+                Intent intent = new Intent(MemoryGameMgr.this, MemoryGamePage.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
 //                Intent intent = new Intent(MemoryGame.this, MemoryGameDifficulty.class);
@@ -190,9 +194,9 @@ public class MemoryGame extends AppCompatActivity {
         }
     }
 
-    protected void showSequence(ArrayList<Button> buttonArray, MemorySequence memorySequence, int stage){
+    protected void showSequence(ArrayList<Button> buttonArray, MemorySequenceMgr memorySequenceMgr, int stage){
         for(int i = 0; i< memoryUser.getStage(); i++){
-            Button sequencebutton = buttonArray.get(memorySequence.getSequenceElement(i)-1);
+            Button sequencebutton = buttonArray.get(memorySequenceMgr.getSequenceElement(i)-1);
             Timer timerRed = new Timer();
             // turn button red
             timerRed.schedule(new TimerTask() {

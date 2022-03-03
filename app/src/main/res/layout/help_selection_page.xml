@@ -10,55 +10,47 @@
         android:id="@+id/TMTBtnHelp"
         android:layout_width="115dp"
         android:layout_height="72dp"
-        android:layout_marginTop="251dp"
-        android:layout_marginBottom="88dp"
         android:text="@string/Trail_test"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/memoryGameButtonHelp"
+        app:layout_constraintEnd_toStartOf="@+id/memoryGameButtonHelp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/reactionBtnHelp"
         android:layout_width="115dp"
         android:layout_height="72dp"
-        android:layout_marginTop="251dp"
-        android:layout_marginBottom="88dp"
         android:text="@string/Reaction"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/memoryGameButtonHelp"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/memoryGameButtonHelp"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/memoryGameButtonHelp"
         android:layout_width="115dp"
         android:layout_height="72dp"
-        android:layout_marginTop="251dp"
-        android:layout_marginBottom="88dp"
         android:text="@string/Memory"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/TMTBtnHelp"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/reactionBtnHelp"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="168dp"
-        android:layout_height="79dp"
+        android:layout_width="152dp"
+        android:layout_height="80dp"
         android:layout_marginBottom="64dp"
         android:text="Help"
+        android:textAlignment="center"
         android:textColor="@color/White"
         android:textSize="48sp"
         app:layout_constraintBottom_toTopOf="@+id/memoryGameButtonHelp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.555" />
+        app:layout_constraintVertical_bias="0.64" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,13 +1,15 @@
-package com.example.rng;
+package com.example.rng.pages;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MemoryGameDifficulty extends AppCompatActivity {
+import com.example.rng.manager.MemoryGameMgr;
+import com.example.rng.R;
+
+public class MemoryGamePage extends AppCompatActivity {
     protected int level;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +27,7 @@ public class MemoryGameDifficulty extends AppCompatActivity {
                 // if easy is clicked, the activity will switch to memoryGame
                 // the variable level is passed into the memoryGame activity
                 level = 1;
-                Intent intent = new Intent(MemoryGameDifficulty.this, MemoryGame.class);
+                Intent intent = new Intent(MemoryGamePage.this, MemoryGameMgr.class);
                 intent.putExtra("key",level);
                 startActivity(intent);
             }
@@ -37,7 +39,7 @@ public class MemoryGameDifficulty extends AppCompatActivity {
                 // if hard is clicked, the activity will switch to memoryGame
                 // the variable level is passed into the memoryGame activity
                 level = 2;
-                Intent intent = new Intent(MemoryGameDifficulty.this, MemoryGame.class);
+                Intent intent = new Intent(MemoryGamePage.this, MemoryGameMgr.class);
                 intent.putExtra("key",level);
                 startActivity(intent);
             }

@@ -23,7 +23,6 @@ public class MemoryReactionHighScoreRecord {
         return HighScoreEasy;
     }
 
-
     public Long getHighScoreHard() {
         return HighScoreHard;
     }

@@ -1,4 +1,4 @@
-package com.example.rng;
+package com.example.rng.entity;
 
 import androidx.annotation.NonNull;
 
@@ -21,33 +21,33 @@ public class MemoryUser {
     protected String gameDifficulty;
 
     //constructor
-    MemoryUser(){};
+    public MemoryUser(){};
 
-    protected void setLives(int lives){
+    public void setLives(int lives){
         this.lives = lives;
     }
 
-    protected int getLives(){
+    public int getLives(){
         return this.lives;
     }
 
-    protected void setStage(int stage){
+    public void setStage(int stage){
         this.stage = stage;
     }
 
-    protected int getStage(){
+    public int getStage(){
         return this.stage;
     }
 
-    protected void setGameDifficulty(String gameDifficulty) {
+    public void setGameDifficulty(String gameDifficulty) {
         this.gameDifficulty = gameDifficulty;
     }
 
-    protected String getGameDifficulty(){
+    public String getGameDifficulty(){
         return this.gameDifficulty;
     }
 
-    protected void storeStage() {
+    public void storeStage() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = null;
         if (user != null) {
@@ -61,7 +61,7 @@ public class MemoryUser {
         overWriteHighScore((long) this.stage,this.gameDifficulty);
     }
 
-    protected void overWriteHighScore(long stage, String gameDifficulty){
+    public void overWriteHighScore(long stage, String gameDifficulty){
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = null;
         if (user != null) {

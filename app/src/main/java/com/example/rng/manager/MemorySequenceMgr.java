@@ -1,15 +1,15 @@
-package com.example.rng;
+package com.example.rng.manager;
 
 import java.util.ArrayList;
 
 
-class MemorySequence {
+class MemorySequenceMgr {
     protected ArrayList<Integer> sequencearray = new ArrayList<Integer>();
     protected static int maxSequenceSize = 0;
 
     //constructors
-    public MemorySequence(){}
-    public MemorySequence(int maxSequenceSize) {
+    public MemorySequenceMgr(){}
+    public MemorySequenceMgr(int maxSequenceSize) {
         this.maxSequenceSize = maxSequenceSize;
     }
 
@@ -46,14 +46,14 @@ class MemorySequence {
         this.sequencearray.add(num);
     }
 
-    protected int compareTo(MemorySequence memorySequence) {
+    protected int compareTo(MemorySequenceMgr memorySequenceMgr) {
         int i;
-        for(i=0; i < memorySequence.getSequenceSize(); i++){
-            if (memorySequence.getSequenceElement(i) != this.sequencearray.get(i)){
+        for(i=0; i < memorySequenceMgr.getSequenceSize(); i++){
+            if (memorySequenceMgr.getSequenceElement(i) != this.sequencearray.get(i)){
                 return -1;
             }
         }
-        return memorySequence.getSequenceSize();
+        return memorySequenceMgr.getSequenceSize();
     }
 }
 

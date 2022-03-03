@@ -4,11 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.widget.Button;
 
 import com.example.rng.HealthTrackerPage;
-import com.example.rng.MemoryGameDifficulty;
 import com.example.rng.R;
 
 public class HomePage extends AppCompatActivity {
@@ -36,7 +34,7 @@ public class HomePage extends AppCompatActivity {
         reactionGameButton.setOnClickListener(v -> startActivity(new Intent(HomePage.this, ReactionGamePage.class)));
 
         // Set the buttons such that they can link to another page ( This is an on click listener for memory game )
-        memoryGameButton.setOnClickListener(v -> startActivity(new Intent(HomePage.this, MemoryGameDifficulty.class)));
+        memoryGameButton.setOnClickListener(v -> startActivity(new Intent(HomePage.this, MemoryGamePage.class)));
 
         // Set the buttons such that they can link to another page ( This is an on click listener for trailMaking test )
         tmtGameButton.setOnClickListener(v -> startActivity(new Intent(HomePage.this, TrailMakingTestPage.class)));
@@ -45,7 +43,7 @@ public class HomePage extends AppCompatActivity {
         leaderboardButton.setOnClickListener(v -> startActivity(new Intent(HomePage.this, LeaderboardPageSelection.class)));
 
         // help me
-        helpButton.setOnClickListener(v ->  startActivity(new Intent(HomePage.this, HelpPageSelection.class)));
+        helpButton.setOnClickListener(v -> startActivity(new Intent(HomePage.this, HelpPageSelection.class)));
 
 
         healthTrackerButton.setOnClickListener(v ->  startActivity(new Intent(HomePage.this, HealthTrackerPage.class)));
