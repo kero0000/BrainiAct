@@ -122,7 +122,7 @@ public class MemoryGameMgr extends AppCompatActivity {
                         TableRow.LayoutParams.MATCH_PARENT,
                         TableRow.LayoutParams.MATCH_PARENT,
                         1.0f));
-                button.setBackgroundResource(R.color.CornflowerBlue);
+                button.setBackgroundResource(R.color.Gray);
                 button.setId(((row)*dimension)+col+1);
                 button.setOnTouchListener(new View.OnTouchListener() {
                     @SuppressLint("ClickableViewAccessibility")
@@ -130,7 +130,7 @@ public class MemoryGameMgr extends AppCompatActivity {
                     public boolean onTouch(View v, MotionEvent event){
                         if(!buttonDisabled) {
                             if (event.getAction() == MotionEvent.ACTION_UP) {
-                                button.setBackgroundResource(R.color.CornflowerBlue);
+                                button.setBackgroundResource(R.color.Gray);
                             } else if (event.getAction() == MotionEvent.ACTION_DOWN) {
                                 button.setBackgroundResource(R.color.White);
                                 gridButtonClicked(button.getId());
@@ -212,7 +212,7 @@ public class MemoryGameMgr extends AppCompatActivity {
             timerBlue.schedule(new TimerTask() {
                 @Override
                 public void run() {
-                    sequencebutton.setBackgroundResource(R.color.CornflowerBlue);
+                    sequencebutton.setBackgroundResource(R.color.Gray);
                 }
             }, (i+1)*1000 +500);
         }

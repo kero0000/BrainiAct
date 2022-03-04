@@ -4,40 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Black">
+    android:background="@color/DarkOrange">
 
     <TextView
         android:id="@+id/stageTxt"
-        android:layout_width="275dp"
-        android:layout_height="24dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
         android:textAlignment="center"
-        android:textColor="#F3F3F3"
+        android:textColor="@color/MediumVioletRed"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.224" />
+        app:layout_constraintVertical_bias="0.256" />
 
     <TextView
         android:id="@+id/livesTxt"
-        android:layout_width="275dp"
-        android:layout_height="24dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
         android:textAlignment="center"
-        android:textColor="#FAF6F6"
+        android:textColor="@color/MediumVioletRed"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.162" />
+        app:layout_constraintVertical_bias="0.18" />
 
     <TextView
         android:id="@+id/memory_game_title"
-        android:layout_width="251dp"
-        android:layout_height="55dp"
+        android:layout_width="518dp"
+        android:layout_height="52dp"
         android:text="Memory Game"
         android:textAlignment="center"
-        android:textColor="@color/GhostWhite"
-        android:textSize="34sp"
+        android:textColor="@color/MediumVioletRed"
+        android:textSize="48sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,6 +67,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Back"
+        android:backgroundTint="@android:color/white"
+        android:textColor="#171616"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.021"
@@ -74,6 +82,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Instructions"
+        android:backgroundTint="@android:color/white"
+        android:textColor="#171616"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.992"

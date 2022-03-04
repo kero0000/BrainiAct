@@ -5,14 +5,14 @@
     android:id="@+id/circles_bckgrd"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#101010">
+    android:background="@color/DarkOrange">
 
     <ImageView
         android:id="@+id/background_canvas"
         android:layout_width="736dp"
         android:layout_height="412dp"
         android:alpha="1"
-        android:background="#101010"
+        android:background="@color/DarkOrange"
         android:orientation="vertical"
         android:weightSum="1"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,8 +26,10 @@
         android:id="@+id/header2"
         android:layout_width="627dp"
         android:layout_height="332dp"
+        android:background="@color/DarkOrange"
         android:text="TextView"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
+        android:textColorLink="#000000"
         android:textSize="70sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

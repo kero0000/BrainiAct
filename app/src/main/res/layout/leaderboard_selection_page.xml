@@ -4,13 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#101010">
+    android:background="@color/DarkOrange">
 
     <Button
         android:id="@+id/TMT"
-        android:layout_width="115dp"
-        android:layout_height="72dp"
+        android:layout_width="161dp"
+        android:layout_height="84dp"
+        android:backgroundTint="@android:color/white"
         android:text="@string/Trail_test"
+        android:textColor="#171616"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/memoryGameButton"
@@ -19,9 +22,12 @@
 
     <Button
         android:id="@+id/reactionBtn"
-        android:layout_width="115dp"
-        android:layout_height="72dp"
+        android:layout_width="161dp"
+        android:layout_height="84dp"
+        android:backgroundTint="@android:color/white"
         android:text="@string/Reaction"
+        android:textColor="#171616"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/memoryGameButton"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,9 +35,12 @@
 
     <Button
         android:id="@+id/memoryGameButton"
-        android:layout_width="115dp"
-        android:layout_height="72dp"
+        android:layout_width="161dp"
+        android:layout_height="84dp"
+        android:backgroundTint="@android:color/white"
         android:text="@string/Memory"
+        android:textColor="#171616"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

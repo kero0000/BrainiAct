@@ -4,13 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#101010">
+    android:background="@color/DarkOrange">
 
     <Button
         android:id="@+id/TMTBtnHelp"
-        android:layout_width="115dp"
-        android:layout_height="72dp"
+        android:layout_width="161dp"
+        android:layout_height="84dp"
+        android:backgroundTint="@android:color/white"
         android:text="@string/Trail_test"
+        android:textColor="#171616"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/memoryGameButtonHelp"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,9 +21,12 @@
 
     <Button
         android:id="@+id/reactionBtnHelp"
-        android:layout_width="115dp"
-        android:layout_height="72dp"
+        android:layout_width="161dp"
+        android:layout_height="84dp"
+        android:backgroundTint="@android:color/white"
         android:text="@string/Reaction"
+        android:textColor="#171616"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/memoryGameButtonHelp"
@@ -28,9 +34,12 @@
 
     <Button
         android:id="@+id/memoryGameButtonHelp"
-        android:layout_width="115dp"
-        android:layout_height="72dp"
+        android:layout_width="161dp"
+        android:layout_height="84dp"
+        android:backgroundTint="@android:color/white"
         android:text="@string/Memory"
+        android:textColor="#171616"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,8 +53,9 @@
         android:layout_marginBottom="64dp"
         android:text="Help"
         android:textAlignment="center"
-        android:textColor="@color/White"
+        android:textColor="@color/MediumVioletRed"
         android:textSize="48sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/memoryGameButtonHelp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.499"

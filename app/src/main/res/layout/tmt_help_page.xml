@@ -5,14 +5,14 @@
     android:id="@+id/circles_bckgrd"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#101010">
+    android:background="@color/DarkOrange">
 
     <ImageView
         android:id="@+id/background_canvas"
         android:layout_width="736dp"
         android:layout_height="412dp"
         android:alpha="1"
-        android:background="#101010"
+        android:background="@color/DarkOrange"
         android:orientation="vertical"
         android:weightSum="1"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,6 +27,7 @@
         android:layout_width="664dp"
         android:layout_height="248dp"
         android:scrollbars="vertical"
+        android:background="@color/DarkOrange"
         android:text="Trail Making Test Tutorial"
         android:textAlignment="center"
         android:textColor="@android:color/white"

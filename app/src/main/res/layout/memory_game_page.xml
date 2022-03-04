@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/GhostWhite">
+    android:background="@color/DarkOrange">
 
 
     <TextView
@@ -13,6 +13,7 @@
         android:layout_width="275dp"
         android:layout_height="24dp"
         android:textAlignment="center"
+        android:textColor="@color/MediumVioletRed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,6 +24,7 @@
         android:id="@+id/livesTxt"
         android:layout_width="275dp"
         android:layout_height="24dp"
+        android:textColor="@color/MediumVioletRed"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +38,7 @@
         android:layout_height="55dp"
         android:text="Memory Game"
         android:textAlignment="center"
-        android:textColor="@color/Black"
+        android:textColor="@color/MediumVioletRed"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -284,7 +284,9 @@ public class TrailMakingTestMgr extends AppCompatActivity {
 
         float x = imageView.getX() + imageView.getWidth() / 4;
         float y = imageView.getY() + imageView.getHeight() / 2;
-
+        Resources res = getResources();
+        int color = res.getColor(R.color.MediumVioletRed);
+        paint.setColor(color);
         canvas.drawText("Congratulations!", x + 150 , y , paint);
         canvas.drawText("Time Taken: " + timeTaken/1000 + " s", x + 100, y + 120, paint);
         retryButton.setVisibility(View.VISIBLE);
