@@ -16,46 +16,56 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.039" />
+        app:layout_constraintVertical_bias="0.01" />
 
-    <com.jjoe64.graphview.GraphView
-        android:id="@+id/idEasyGraphView"
-        android:layout_width="620dp"
-        android:layout_height="297dp"
-        android:layout_alignParentTop="true"
+    <ScrollView
+        android:id="@+id/ScrollView"
+        android:layout_width="648dp"
+        android:layout_height="347dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.637"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.75">
 
-    <com.jjoe64.graphview.GraphView
-        android:id="@+id/idMediumGraphView"
-        android:layout_width="620dp"
-        android:layout_height="297dp"
-        android:layout_alignParentTop="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.637"
-        tools:ignore="MissingConstraints" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <com.jjoe64.graphview.GraphView
-        android:id="@+id/idHardGraphView"
-        android:layout_width="620dp"
-        android:layout_height="297dp"
-        android:layout_alignParentTop="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.637"
-        tools:ignore="MissingConstraints" />
+            <com.jjoe64.graphview.GraphView
+                android:id="@+id/idEasyGraphView"
+                android:layout_width= "642dp"
+                android:layout_height="342dp"
+                android:layout_alignParentTop="true"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/space"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.jjoe64.graphview.GraphView
+                android:id="@+id/idMediumGraphView"
+                android:layout_width= "642dp"
+                android:layout_height="342dp"
+                android:layout_alignParentTop="true"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/space2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.jjoe64.graphview.GraphView
+                android:id="@+id/idHardGraphView"
+                android:layout_width="match_parent"
+                android:layout_height="342dp"
+                android:layout_alignParentTop="true"
+                tools:ignore="MissingConstraints" />
+        </LinearLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

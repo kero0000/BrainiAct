@@ -32,6 +32,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class DisplayHealthTracker extends AppCompatActivity {
+    final int MILLISECONDS_A_DAY = 1000*60*60*24;
     String uid = (String) FirebaseAuth.getInstance().getCurrentUser().getUid();
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,14 +43,15 @@ public class DisplayHealthTracker extends AppCompatActivity {
         GraphView mediumGraphView = findViewById(R.id.idMediumGraphView);
         GraphView hardGraphView = findViewById(R.id.idHardGraphView);
 
-        mediumGraphView.setVisibility(View.INVISIBLE);
-        hardGraphView.setVisibility(View.INVISIBLE);
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        easyGraphView.setVisibility((View.GONE));
+        mediumGraphView.setVisibility(View.GONE);
+        hardGraphView.setVisibility(View.GONE);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yy");
         easyGraphView.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter(){
             @Override
             public String formatLabel(double value, boolean isValueX) {
                 if(isValueX){
-                    return sdf.format(new Date((long)value));
+                    return sdf.format(new Date((long)value * MILLISECONDS_A_DAY));
                 }
                 return super.formatLabel(value,isValueX);
             }
@@ -59,7 +61,7 @@ public class DisplayHealthTracker extends AppCompatActivity {
             @Override
             public String formatLabel(double value, boolean isValueX) {
                 if(isValueX){
-                    return sdf.format(new Date((long)value));
+                    return sdf.format(new Date((long)value * MILLISECONDS_A_DAY));
                 }
                 return super.formatLabel(value,isValueX);
             }
@@ -69,7 +71,7 @@ public class DisplayHealthTracker extends AppCompatActivity {
             @Override
             public String formatLabel(double value, boolean isValueX) {
                 if(isValueX){
-                    return sdf.format(new Date((long)value));
+                    return sdf.format(new Date((long)value * MILLISECONDS_A_DAY));
                 }
                 return super.formatLabel(value,isValueX);
             }
@@ -80,50 +82,99 @@ public class DisplayHealthTracker extends AppCompatActivity {
         GetAllScores GetAllScores = new GetAllScores();
         switch (game) {
             case "TMT":
+                easyGraphView.setVisibility((View.VISIBLE));
+                mediumGraphView.setVisibility(View.VISIBLE);
+                hardGraphView.setVisibility(View.VISIBLE);
                 GetAllScores.GetAllScores("TMT", "easy", new GetAllScores.FireBaseCallback() {
                     @Override
                     public void onCallback(LineGraphSeries<DataPoint> series) {
-                        DrawGraph(series,easyGraphView);
+                        if (series.isEmpty()){
+                            easyGraphView.setVisibility(View.GONE);
+                        }
+                        else{
+                            DrawGraph(series,easyGraphView);
+                            easyGraphView.setTitle("Trail Making Test - Easy");
+                        }
                     }
                 });
                 GetAllScores.GetAllScores("TMT", "medium", new GetAllScores.FireBaseCallback() {
                     @Override
                     public void onCallback(LineGraphSeries<DataPoint> series) {
-                        DrawGraph(series,mediumGraphView);
+                        if (series.isEmpty()){
+                            mediumGraphView.setVisibility(View.GONE);
+                        }
+                        else{
+                            DrawGraph(series,mediumGraphView);
+                            mediumGraphView.setTitle("Trail Making Test - Medium");
+                        }
                     }
                 });
                 GetAllScores.GetAllScores("TMT", "hard", new GetAllScores.FireBaseCallback() {
                     @Override
                     public void onCallback(LineGraphSeries<DataPoint> series) {
-                        DrawGraph(series,hardGraphView);
+                        if (series.isEmpty()){
+                            hardGraphView.setVisibility(View.GONE);
+                        }
+                        else{
+                            DrawGraph(series,hardGraphView);
+                            hardGraphView.setTitle("Trail Making Test - Hard");
+                        }
                     }
                 });
                 break;
             case "reaction":
+                easyGraphView.setVisibility((View.VISIBLE));
+                hardGraphView.setVisibility(View.VISIBLE);
                 GetAllScores.GetAllScores("reaction", "easy", new GetAllScores.FireBaseCallback() {
                     @Override
                     public void onCallback(LineGraphSeries<DataPoint> series) {
-                        DrawGraph(series,easyGraphView);
+                        if (series.isEmpty()){
+                            easyGraphView.setVisibility(View.GONE);
+                        }
+                        else{
+                            DrawGraph(series,easyGraphView);
+                            easyGraphView.setTitle("Reaction Game - Easy");
+                        }
                     }
                 });
                 GetAllScores.GetAllScores("reaction", "hard", new GetAllScores.FireBaseCallback() {
                     @Override
                     public void onCallback(LineGraphSeries<DataPoint> series) {
-                        DrawGraph(series,hardGraphView);
+                        if (series.isEmpty()){
+                            hardGraphView.setVisibility(View.GONE);
+                        }
+                        else{
+                            DrawGraph(series,hardGraphView);
+                            hardGraphView.setTitle("Reaction Game - Hard");
+                        }
                     }
                 });
                break;
             case "memory":
+                easyGraphView.setVisibility((View.VISIBLE));
+                hardGraphView.setVisibility(View.VISIBLE);
                 GetAllScores.GetAllScores("memory", "easy", new GetAllScores.FireBaseCallback() {
                     @Override
                     public void onCallback(LineGraphSeries<DataPoint> series) {
-                        DrawGraph(series,easyGraphView);
+                        if (series.isEmpty()){
+                            easyGraphView.setVisibility(View.GONE);
+                        }
+                        else{
+                            DrawGraph(series,easyGraphView);
+                            easyGraphView.setTitle("Memory Game - Easy");
+                        }
                     }
                 });
                 GetAllScores.GetAllScores("memory", "hard", new GetAllScores.FireBaseCallback() {
                     @Override
                     public void onCallback(LineGraphSeries<DataPoint> series) {
-                        DrawGraph(series,hardGraphView);
+                        if (series.isEmpty()){
+                            hardGraphView.setVisibility(View.GONE);
+                        }
+                        else{
+                            DrawGraph(series,hardGraphView);
+                            hardGraphView.setTitle("Memory Game - Hard");
+                        }
                     }
                 });
                 break;
@@ -134,11 +185,17 @@ public class DisplayHealthTracker extends AppCompatActivity {
 
     protected void DrawGraph(LineGraphSeries<DataPoint> series, GraphView graphView){
         series.setDrawDataPoints(true);
-        graphView.getViewport().setMaxX(series.getHighestValueX() + 10000);
-        graphView.getViewport().setMinX(series.getLowestValueX() + 10000);
+        graphView.getGridLabelRenderer().setNumHorizontalLabels(4);
+        graphView.getViewport().setMaxX(series.getHighestValueX());
+        double LastWeek = series.getHighestValueX() - 14;
+        if (LastWeek >=  series.getLowestValueX()){
+            graphView.getViewport().setMinX(LastWeek);
+        }
+        else {
+            graphView.getViewport().setMinX(series.getLowestValueX());
+        }
         graphView.getViewport().setXAxisBoundsManual(true);
         graphView.addSeries(series);
-
     }
 }
 

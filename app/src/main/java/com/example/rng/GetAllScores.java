@@ -20,6 +20,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class GetAllScores {
+    final int MILLISECONDS_A_DAY = 1000*60*60*24;
     String uid = (String) FirebaseAuth.getInstance().getCurrentUser().getUid();
     DatabaseReference ref = FirebaseDatabase.getInstance().getReference("allScores");
     Query query = null;
@@ -34,20 +35,24 @@ public class GetAllScores {
             public void onDataChange(@NonNull DataSnapshot datasnapshot) {
                 Date prevdate = null;
                 Date date = null;
+                long dateval = 0, prevdateval = 0;
                 long scores, sum = 0, count = 0;
                 for (DataSnapshot snapshot : datasnapshot.getChildren()) {
                     try {
                         date = new SimpleDateFormat("dd-MM-yyyy").parse((String) snapshot.child("date").getValue());
+                        dateval = date.getTime() / MILLISECONDS_A_DAY;
                     } catch (ParseException e) {
                         e.printStackTrace();
                     }
                     scores = (long) snapshot.child("scores").getValue();
                     if (prevdate == null) {
                         prevdate = date;
+                        prevdateval = dateval;
                     } else if (prevdate.compareTo(date) != 0) {
-                        Log.d("mytag", String.valueOf(prevdate)+" "+String.valueOf(sum/count));
-                        series.appendData(new DataPoint(prevdate, sum / count), true, 30, true);
+                        //Log.d("mytag", String.valueOf(prevdate)+" "+String.valueOf(sum/count));
+                        series.appendData(new DataPoint(prevdateval, sum / count), true, 30, true);
                         prevdate = date;
+                        prevdateval = dateval;
                         sum = 0;
                         count = 0;
                     }
@@ -55,8 +60,8 @@ public class GetAllScores {
                     count++;
                 }
                 if (count > 0 && prevdate != null) {
-                    Log.d("mytag", String.valueOf(prevdate)+" "+String.valueOf(sum/count));
-                    series.appendData(new DataPoint(prevdate, sum / count), true, 30, true);
+                    //Log.d("mytag", String.valueOf(prevdate)+" "+String.valueOf(sum/count));
+                    series.appendData(new DataPoint(prevdateval, sum / count), true, 30, true);
                 }
                 firebaseCallback.onCallback(series);
             }
