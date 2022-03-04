@@ -187,7 +187,7 @@ public class DisplayHealthTracker extends AppCompatActivity {
         series.setDrawDataPoints(true);
         graphView.getGridLabelRenderer().setNumHorizontalLabels(4);
         graphView.getViewport().setMaxX(series.getHighestValueX());
-        double LastWeek = series.getHighestValueX() - 14;
+        double LastWeek = series.getHighestValueX() - 7;
         if (LastWeek >=  series.getLowestValueX()){
             graphView.getViewport().setMinX(LastWeek);
         }
