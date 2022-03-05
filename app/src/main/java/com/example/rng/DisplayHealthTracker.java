@@ -30,9 +30,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class DisplayHealthTracker extends AppCompatActivity {
-    final int MILLISECONDS_A_DAY = 1000*60*60*24;
     String uid = (String) FirebaseAuth.getInstance().getCurrentUser().getUid();
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +51,7 @@ public class DisplayHealthTracker extends AppCompatActivity {
             @Override
             public String formatLabel(double value, boolean isValueX) {
                 if(isValueX){
-                    return sdf.format(new Date((long)value * MILLISECONDS_A_DAY));
+                    return sdf.format(TimeUnit.DAYS.toMillis((long)value));
                 }
                 return super.formatLabel(value,isValueX);
             }
@@ -61,7 +61,7 @@ public class DisplayHealthTracker extends AppCompatActivity {
             @Override
             public String formatLabel(double value, boolean isValueX) {
                 if(isValueX){
-                    return sdf.format(new Date((long)value * MILLISECONDS_A_DAY));
+                    return sdf.format(TimeUnit.DAYS.toMillis((long)value));
                 }
                 return super.formatLabel(value,isValueX);
             }
@@ -71,7 +71,7 @@ public class DisplayHealthTracker extends AppCompatActivity {
             @Override
             public String formatLabel(double value, boolean isValueX) {
                 if(isValueX){
-                    return sdf.format(new Date((long)value * MILLISECONDS_A_DAY));
+                    return sdf.format(TimeUnit.DAYS.toMillis((long)value));
                 }
                 return super.formatLabel(value,isValueX);
             }
@@ -88,6 +88,7 @@ public class DisplayHealthTracker extends AppCompatActivity {
                 GetAllScores.GetAllScores("TMT", "easy", new GetAllScores.FireBaseCallback() {
                     @Override
                     public void onCallback(LineGraphSeries<DataPoint> series) {
+                        Log.d("mtyag", String.valueOf(series.isEmpty()));
                         if (series.isEmpty()){
                             easyGraphView.setVisibility(View.GONE);
                         }
@@ -185,17 +186,12 @@ public class DisplayHealthTracker extends AppCompatActivity {
 
     protected void DrawGraph(LineGraphSeries<DataPoint> series, GraphView graphView){
         series.setDrawDataPoints(true);
-        graphView.getGridLabelRenderer().setNumHorizontalLabels(4);
+        Calendar cal = Calendar.getInstance();
         graphView.getViewport().setMaxX(series.getHighestValueX());
-        double LastWeek = series.getHighestValueX() - 7;
-        if (LastWeek >=  series.getLowestValueX()){
-            graphView.getViewport().setMinX(LastWeek);
-        }
-        else {
-            graphView.getViewport().setMinX(series.getLowestValueX());
-        }
+        graphView.getViewport().setMinX(series.getLowestValueX());
         graphView.getViewport().setXAxisBoundsManual(true);
         graphView.addSeries(series);
     }
+
 }
 
