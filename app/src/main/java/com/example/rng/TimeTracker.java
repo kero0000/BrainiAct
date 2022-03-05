@@ -27,7 +27,7 @@ public class TimeTracker {
             uid = user.getUid();
         }
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("allScores");
-        String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
+        double date = System.currentTimeMillis();
         scoreRecord record = new scoreRecord(date, timeTaken);
 
         rootRef.child(uid).child(game).child(gameLevel).push().setValue(record);

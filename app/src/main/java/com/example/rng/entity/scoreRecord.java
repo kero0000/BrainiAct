@@ -1,17 +1,17 @@
 package com.example.rng.entity;
 
 public class scoreRecord {
-    String date;
+    double date;
     double scores;
 
-    public scoreRecord(String date, double scores){
+    public scoreRecord(double date, double scores){
         this.date = date;
         this.scores = scores;
     }
     public scoreRecord(){}
 
 
-    public String getDate(){
+    public double getDate(){
         return this.date;
     }
 
@@ -19,7 +19,7 @@ public class scoreRecord {
         return this.scores;
     }
 
-    public void setDate(String date){
+    public void setDate(double date){
         this.date = date;
     }
 

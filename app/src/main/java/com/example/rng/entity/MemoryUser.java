@@ -10,6 +10,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
@@ -54,7 +55,7 @@ public class MemoryUser {
             uid = user.getUid();
         }
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("allScores");
-        String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
+        double date = System.currentTimeMillis();
         scoreRecord record = new scoreRecord(date, this.stage);
 
         rootRef.child(uid).child("memory").child(this.gameDifficulty).push().setValue(record);
