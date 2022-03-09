@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/DarkOrange">
+    android:background="@color/Background">
 
     <Button
         android:id="@+id/TMTBtnHelp"
@@ -53,7 +53,7 @@
         android:layout_marginBottom="64dp"
         android:text="Help"
         android:textAlignment="center"
-        android:textColor="@color/MediumVioletRed"
+        android:textColor="@color/Black"
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/memoryGameButtonHelp"

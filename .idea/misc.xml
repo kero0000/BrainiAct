@@ -38,12 +38,24 @@
         <entry key="..\:/Users/shrey/AndroidStudioProjects/CognitiveApp/app/src/main/res/layout/memory_game_page.xml" value="0.28703703703703703" />
         <entry key="..\:/Users/shrey/StudioProjects/CognitiveApp/app/src/main/res/layout-land/memory_game_difficulty_selector.xml" value="0.30687830687830686" />
         <entry key="..\:/Users/shrey/StudioProjects/CognitiveApp/app/src/main/res/layout-land/memory_game_page.xml" value="0.30687830687830686" />
-        <entry key="..\:/Users/shrey/StudioProjects/CognitiveApp/app/src/main/res/layout/activity_display_health_tracker.xml" value="0.307518115942029" />
-        <entry key="..\:/Users/shrey/StudioProjects/CognitiveApp/app/src/main/res/layout/activity_display_leader_board.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/shrey/StudioProjects/CognitiveApp/app/src/main/res/layout/help_selection_page.xml" value="0.3625" />
+        <entry key="..\:/Users/shrey/StudioProjects/CognitiveApp/app/src/main/res/layout-port/memory_game_difficulty_selector.xml" value="0.1" />
+        <entry key="..\:/Users/shrey/StudioProjects/CognitiveApp/app/src/main/res/layout/activity_display_health_tracker.xml" value="0.264" />
+        <entry key="..\:/Users/shrey/StudioProjects/CognitiveApp/app/src/main/res/layout/activity_display_leader_board.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/shrey/StudioProjects/CognitiveApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/shrey/StudioProjects/CognitiveApp/app/src/main/res/layout/activity_main_page.xml" value="0.264" />
+        <entry key="..\:/Users/shrey/StudioProjects/CognitiveApp/app/src/main/res/layout/activity_register_user.xml" value="0.2" />
+        <entry key="..\:/Users/shrey/StudioProjects/CognitiveApp/app/src/main/res/layout/circles.xml" value="0.1" />
+        <entry key="..\:/Users/shrey/StudioProjects/CognitiveApp/app/src/main/res/layout/circles_rel.xml" value="0.1" />
+        <entry key="..\:/Users/shrey/StudioProjects/CognitiveApp/app/src/main/res/layout/help_selection_page.xml" value="0.2" />
         <entry key="..\:/Users/shrey/StudioProjects/CognitiveApp/app/src/main/res/layout/leaderboard_selection_page.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/shrey/StudioProjects/CognitiveApp/app/src/main/res/layout/memory_game_page.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/shrey/StudioProjects/CognitiveApp/app/src/main/res/layout/memory_help_page.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/shrey/StudioProjects/CognitiveApp/app/src/main/res/layout/memory_game_page.xml" value="0.307518115942029" />
+        <entry key="..\:/Users/shrey/StudioProjects/CognitiveApp/app/src/main/res/layout/memory_help_page.xml" value="0.136" />
+        <entry key="..\:/Users/shrey/StudioProjects/CognitiveApp/app/src/main/res/layout/reaction_game_page.xml" value="0.1" />
+        <entry key="..\:/Users/shrey/StudioProjects/CognitiveApp/app/src/main/res/layout/reaction_game_selection.xml" value="0.1" />
+        <entry key="..\:/Users/shrey/StudioProjects/CognitiveApp/app/src/main/res/layout/reaction_help_page.xml" value="0.1" />
+        <entry key="..\:/Users/shrey/StudioProjects/CognitiveApp/app/src/main/res/layout/tmt_help_page.xml" value="0.1" />
+        <entry key="..\:/Users/shrey/StudioProjects/CognitiveApp/app/src/main/res/layout/trail_making_game_selection.xml" value="0.1" />
+        <entry key="..\:/Users/shrey/StudioProjects/CognitiveApp/app/src/main/res/layout/trail_making_test_page.xml" value="0.136" />
         <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp/app/src/main/res/layout/TMT_help_page.xml" value="0.25" />
         <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp/app/src/main/res/layout/activity_main_page.xml" value="0.25" />

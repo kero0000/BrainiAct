@@ -78,27 +78,45 @@ public class MemoryGameMgr extends AppCompatActivity {
         // set text on view based off of model values
         TextView stageTxt = findViewById(R.id.stageTxt);
         TextView livesTxt = findViewById(R.id.livesTxt);
+        TableLayout tableGrid = (TableLayout)findViewById(R.id.tableGrid);
+        TextView playText = findViewById(R.id.playTextMem);
+        Button playButton = findViewById(R.id.playButtonMem);
         livesTxt.setText("Lives: "+Integer.toString(memoryUser.getLives()));
         stageTxt.setText("Stage: "+Integer.toString(memoryUser.getStage()));
 
         // use level value to add buttons
+        livesTxt.setVisibility(View.GONE);
+        stageTxt.setVisibility(View.GONE);
+        tableGrid.setVisibility(View.GONE);
 
-        int dimension = 0,gridsize =0;
+        playButton.setOnClickListener( new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+             playButton.setVisibility(View.GONE);
+             playText.setVisibility(View.GONE);
+             livesTxt.setVisibility(View.VISIBLE);
+             stageTxt.setVisibility(View.VISIBLE);
+             tableGrid.setVisibility(View.VISIBLE);
+                int dimension = 0,gridsize =0;
 
-        if (level == 1){
-            dimension = 3;
-            gridsize = 9;
-        }
-        else if (level == 2){
-            dimension = 4;
-            gridsize = 16;
-        }
-        addButtons(dimension);
+                if (level == 1){
+                    dimension = 3;
+                    gridsize = 9;
+                }
+                else if (level == 2){
+                    dimension = 4;
+                    gridsize = 16;
+                }
+                addButtons(dimension);
 
-        // generate random sequence that is of max_sequence_length and within the range 1-gridsize
-        expected.generateRandomSequence(gridsize);
-        // show the sequence
-        showSequence(this.buttonArray, expected, memoryUser.getStage());
+                // generate random sequence that is of max_sequence_length and within the range 1-gridsize
+                expected.generateRandomSequence(gridsize);
+                // show the sequence
+                showSequence(MemoryGameMgr.this.buttonArray, expected, memoryUser.getStage());
+            }
+        });
+
+
     }
 
     @SuppressLint("ClickableViewAccessibility")

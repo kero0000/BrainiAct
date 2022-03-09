@@ -5,7 +5,7 @@
     android:id="@+id/circles_bckgrd"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/DarkOrange">
+    android:background="@color/Background">
 
 
     <TextView
@@ -17,7 +17,7 @@
         android:inputType="textPersonName"
         android:text="@string/Start_prompt"
         android:textAlignment="center"
-        android:textColor="@color/MediumVioletRed"
+        android:textColor="@color/Black"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

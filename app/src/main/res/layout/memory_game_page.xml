@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/DarkOrange">
+    android:background="@color/Background">
 
 
     <TextView
@@ -13,7 +13,7 @@
         android:layout_width="275dp"
         android:layout_height="24dp"
         android:textAlignment="center"
-        android:textColor="@color/MediumVioletRed"
+        android:textColor="@color/Black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,7 @@
         android:id="@+id/livesTxt"
         android:layout_width="275dp"
         android:layout_height="24dp"
-        android:textColor="@color/MediumVioletRed"
+        android:textColor="@color/Black"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,7 +38,7 @@
         android:layout_height="55dp"
         android:text="Memory Game"
         android:textAlignment="center"
-        android:textColor="@color/MediumVioletRed"
+        android:textColor="@color/Black"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,7 +89,7 @@
         android:id="@+id/endGame"
         android:layout_width="369dp"
         android:layout_height="92dp"
-        android:background="#00BCD4"
+        android:background = "@color/White"
         android:orientation="vertical"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -114,6 +114,9 @@
 
         <Button
             android:id="@+id/returnButton"
+            android:backgroundTint="@android:color/black"
+            android:textColor="@color/White"
+            android:textSize="20sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Return To Memory Game Page" />

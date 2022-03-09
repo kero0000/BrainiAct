@@ -5,7 +5,7 @@
     android:id="@+id/gameSelectionBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/DarkOrange">
+    android:background="@color/Background">
 
     <Button
         android:id="@+id/reactionHard"
@@ -53,7 +53,7 @@
         android:text="Reaction Game"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/MediumVioletRed"
+        android:textColor="@color/Black"
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -74,7 +74,7 @@
         android:text="Please pick a difficulty!"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/MediumVioletRed"
+        android:textColor="@color/Black"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

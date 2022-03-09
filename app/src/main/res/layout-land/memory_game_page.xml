@@ -4,43 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/DarkOrange">
+    android:background="@color/Background">
 
     <TextView
         android:id="@+id/stageTxt"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:textAlignment="center"
-        android:textColor="@color/MediumVioletRed"
+        android:textColor="@color/Black"
         android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tableGrid"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.256" />
+        app:layout_constraintTop_toBottomOf="@+id/livesTxt"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/livesTxt"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:textAlignment="center"
-        android:textColor="@color/MediumVioletRed"
+        android:textColor="@color/Black"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.18" />
+        app:layout_constraintTop_toBottomOf="@+id/memory_game_title"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/memory_game_title"
-        android:layout_width="518dp"
-        android:layout_height="52dp"
+        android:layout_width="622dp"
+        android:layout_height="70dp"
         android:text="Memory Game"
         android:textAlignment="center"
-        android:textColor="@color/MediumVioletRed"
+        android:textColor="@color/Black"
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -77,26 +77,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.955" />
 
-    <Button
-        android:id="@+id/instructionsButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Instructions"
-        android:backgroundTint="@android:color/white"
-        android:textColor="#171616"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.992"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.955" />
-
     <LinearLayout
         android:id="@+id/endGame"
         android:layout_width="560dp"
         android:layout_height="100dp"
-        android:background="#00BCD4"
+        android:background = "@color/White"
         android:orientation="vertical"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -121,11 +106,42 @@
 
         <Button
             android:id="@+id/returnButton"
+            android:backgroundTint="@android:color/black"
+            android:textColor="@color/White"
+            android:textSize="20sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Return To Memory Game Page" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/playButtonMem"
+        android:layout_width="192dp"
+        android:layout_height="56dp"
+        android:backgroundTint="@android:color/white"
+        android:text="Play"
+        android:textColor="#171616"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/playTextMem"
+        android:layout_width="442dp"
+        android:layout_height="70dp"
+        android:text="Click the play button to start"
+        android:textAlignment="center"
+        android:textColor="@color/Black"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.321" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

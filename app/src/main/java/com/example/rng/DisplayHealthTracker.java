@@ -186,7 +186,7 @@ public class DisplayHealthTracker extends AppCompatActivity {
 
     protected void DrawGraph(LineGraphSeries<DataPoint> series, GraphView graphView){
         series.setDrawDataPoints(true);
-        Calendar cal = Calendar.getInstance();
+        graphView.setBackgroundResource(R.color.White);
         graphView.getViewport().setMaxX(series.getHighestValueX());
         graphView.getViewport().setMinX(series.getLowestValueX());
         graphView.getViewport().setXAxisBoundsManual(true);
