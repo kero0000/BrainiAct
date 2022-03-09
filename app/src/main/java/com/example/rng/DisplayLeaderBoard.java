@@ -180,8 +180,10 @@ public class DisplayLeaderBoard extends AppCompatActivity {
                 break;
 
             case "reaction":
-                textView5.setVisibility(View.INVISIBLE); // SET MEDIUM TEXT INVISIBLE SINCE MEMORY AND REACTION GAME NO MEDIUM
+                textView5.setVisibility(View.GONE);
+                textViewMedium.setVisibility(View.GONE);// SET MEDIUM TEXT INVISIBLE SINCE MEMORY AND REACTION GAME NO MEDIUM
                 // first callback for displaying easy high score's percentile
+
                 MyCallBack myCallbackReactionEasy = new MyCallBack() {
                     @Override
                     public void onCallback(Long value) {
@@ -265,7 +267,8 @@ public class DisplayLeaderBoard extends AppCompatActivity {
                 });
                 break;
             case "memory":
-                textView5.setVisibility(View.INVISIBLE); // SET MEDIUM TEXT INVISIBLE SINCE MEMORY AND REACTION GAME NO MEDIUM
+                textView5.setVisibility(View.GONE);
+                textViewMedium.setVisibility(View.GONE);// SET MEDIUM TEXT INVISIBLE SINCE MEMORY AND REACTION GAME NO MEDIUM
                 // first callback for displaying easy high score's percentile
                 MyCallBack myCallbackMemoryEasy = new MyCallBack() {
                     @Override

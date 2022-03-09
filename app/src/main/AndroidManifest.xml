@@ -12,10 +12,12 @@
         android:theme="@style/Theme.RNG">
         <activity
             android:name=".DisplayLeaderBoard"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".DisplayHealthTracker"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".pages.HomePage"
             android:configChanges="orientation|keyboardHidden"
