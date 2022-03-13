@@ -5,4 +5,32 @@
     android:id="@+id/circles_bckgrd"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Background"/>
+    android:background="@color/Background">
+
+    <TextView
+        android:id="@+id/faq_text"
+        android:layout_width="550dp"
+        android:layout_height="285dp"
+        android:text="TextView"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.84" />
+
+    <TextView
+        android:id="@+id/faq_header"
+        android:layout_width="559dp"
+        android:layout_height="52dp"
+        android:text="faq_header"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/faq_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.363" />
+</androidx.constraintlayout.widget.ConstraintLayout>

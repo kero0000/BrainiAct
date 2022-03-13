@@ -58,10 +58,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.11" />
+        app:layout_constraintVertical_bias="0.242" />
 
     <TextView
         android:id="@+id/Header"
@@ -71,7 +71,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="280dp"
         android:layout_marginBottom="50dp"
-        android:text="Please pick a difficulty!"
+        android:text="Select Difficulty"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/Black"

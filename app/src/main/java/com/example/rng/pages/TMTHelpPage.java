@@ -18,7 +18,6 @@ public class TMTHelpPage extends AppCompatActivity {
 
         TextView headerTextView = findViewById(R.id.headerText);
 
-
         headerTextView.setText(" Instructions for Trail Making test \n" +
                 "1. Click on the nodes in increasing order \n" +
                 "2. For Easy mode, nodes would be numbered from 1 to 15 \n" +
