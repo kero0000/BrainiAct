@@ -27,7 +27,7 @@
         android:id="@+id/selectDifficulty"
         android:layout_width="387dp"
         android:layout_height="44dp"
-        android:text="Select Difficulty"
+        android:text="Please pick a difficulty!"
         android:textAlignment="center"
         android:textColor="@color/Black"
         android:textSize="28sp"
@@ -62,5 +62,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.793" />
+
+    <Button
+        android:id="@+id/memoryHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="621dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="207dp"
+        android:text="Help"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/hardButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

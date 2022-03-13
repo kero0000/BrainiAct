@@ -21,9 +21,9 @@ public class HomePage extends AppCompatActivity {
         Button memoryGameButton = findViewById(R.id.memoryGameBtn);
         Button tmtGameButton = findViewById(R.id.tmtBtn);
         Button leaderboardButton = findViewById(R.id.leaderboardButton);
-        Button helpButton = findViewById(R.id.helpButton);
         Button logoutButton = findViewById(R.id.logoutButton);
         Button healthTrackerButton = findViewById(R.id.healthTrackerBtn);
+        Button faqButton = findViewById(R.id.faqButton);
 
         // v -> is basically just a lambda expression
 
@@ -42,11 +42,10 @@ public class HomePage extends AppCompatActivity {
         // On click listener to view the leaderboards
         leaderboardButton.setOnClickListener(v -> startActivity(new Intent(HomePage.this, LeaderboardPageSelection.class)));
 
-        // help me
-        helpButton.setOnClickListener(v -> startActivity(new Intent(HomePage.this, HelpPageSelection.class)));
-
-
         healthTrackerButton.setOnClickListener(v ->  startActivity(new Intent(HomePage.this, HealthTrackerPage.class)));
+
+        // faqs
+        faqButton.setOnClickListener(v -> startActivity(new Intent(HomePage.this, FaqPage.class)));
 
     }
 }

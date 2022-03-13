@@ -44,8 +44,8 @@
 
     <TextView
         android:id="@+id/gameNameDisplay"
-        android:layout_width="259dp"
-        android:layout_height="49dp"
+        android:layout_width="374dp"
+        android:layout_height="85dp"
         android:layout_marginStart="280dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="280dp"
@@ -81,5 +81,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.436" />
+
+    <Button
+        android:id="@+id/reactionHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="126dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="347dp"
+        android:text="Help"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/gameNameDisplay"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

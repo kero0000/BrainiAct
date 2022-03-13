@@ -19,6 +19,10 @@ public class MemoryGamePage extends AppCompatActivity {
         // identify the level buttons
         Button Easy = findViewById(R.id.easyButton);
         Button Hard = findViewById((R.id.hardButton));
+        Button meomryHelpButton = findViewById((R.id.memoryHelp));
+
+        // help me
+        meomryHelpButton.setOnClickListener(v -> startActivity(new Intent(MemoryGamePage.this, MemoryHelpPage.class)));
 
         // set onclick listeners
         Easy.setOnClickListener( new View.OnClickListener(){

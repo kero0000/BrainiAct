@@ -12,7 +12,7 @@ import com.example.rng.manager.TrailMakingTestMgr;
 
 public class TrailMakingTestPage extends AppCompatActivity {
 
-    private Button easyButton, mediumButton, hardButton;
+    private Button easyButton, mediumButton, hardButton, tmtHelpButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,10 @@ public class TrailMakingTestPage extends AppCompatActivity {
         easyButton = findViewById(R.id.TmtEasy);
         mediumButton = findViewById(R.id.TmtMedium);
         hardButton = findViewById(R.id.TmtHard);
+        tmtHelpButton = findViewById(R.id.tmtHelp);
+
+        // help me
+        tmtHelpButton.setOnClickListener(v -> startActivity(new Intent(TrailMakingTestPage.this, TMTHelpPage.class)));
 
         easyButton.setOnClickListener(new View.OnClickListener() {
             String value="Easy";
