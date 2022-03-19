@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="HealthTracker"
-        android:textColor="#000000"
+        android:textColor="@color/Black"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,8 +21,8 @@
 
     <ScrollView
         android:id="@+id/ScrollView"
-        android:layout_width="648dp"
-        android:layout_height="347dp"
+        android:layout_width="677dp"
+        android:layout_height="350dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -35,36 +35,264 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.jjoe64.graphview.GraphView
-                android:id="@+id/idEasyGraphView"
-                android:layout_width= "642dp"
-                android:layout_height="342dp"
-                android:layout_alignParentTop="true"
-                tools:ignore="MissingConstraints" />
+            <LinearLayout
+                android:id="@+id/easyht"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/EasyTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <com.jjoe64.graphview.GraphView
+                        android:id="@+id/idEasyGraphView"
+                        android:layout_width="550dp"
+                        android:layout_height="320dp"
+                        android:layout_alignParentTop="true"
+                        tools:ignore="MissingConstraints" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/easyAverage"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:text="Average Score:"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/easyAverageScore"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/easyHigh"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:text="Max Score:"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/easyHighScore"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/easyLow"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:text="Min Score:"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/easyLowScore"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/space"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-            <com.jjoe64.graphview.GraphView
-                android:id="@+id/idMediumGraphView"
-                android:layout_width= "642dp"
-                android:layout_height="342dp"
-                android:layout_alignParentTop="true"
-                tools:ignore="MissingConstraints" />
+            <LinearLayout
+                android:id="@+id/mediumht"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/MediumTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <com.jjoe64.graphview.GraphView
+                        android:id="@+id/idMediumGraphView"
+                        android:layout_width="550dp"
+                        android:layout_height="320dp"
+                        android:layout_alignParentTop="true"
+                        tools:ignore="MissingConstraints" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/mediumAverage"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:text="Average Score:"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/mediumAverageScore"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/mediumHigh"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:text="Max Score:"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/mediumHighScore"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/mediumLow"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:text="Min Score:"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/mediumLowScore"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/space2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-            <com.jjoe64.graphview.GraphView
-                android:id="@+id/idHardGraphView"
+            <LinearLayout
+                android:id="@+id/hardht"
                 android:layout_width="match_parent"
-                android:layout_height="342dp"
-                android:layout_alignParentTop="true"
-                tools:ignore="MissingConstraints" />
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/HardTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <com.jjoe64.graphview.GraphView
+                        android:id="@+id/idHardGraphView"
+                        android:layout_width="550dp"
+                        android:layout_height="320dp"
+                        android:layout_alignParentTop="true"
+                        tools:ignore="MissingConstraints" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/hardAverage"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:text="Average Score:"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/hardAverageScore"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/hardHigh"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:text="Max Score:"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/hardHighScore"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/hardLow"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:text="Min Score:"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/hardLowScore"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 
