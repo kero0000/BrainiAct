@@ -8,11 +8,12 @@
 
     <TextView
         android:id="@+id/HealthTrackerText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="245dp"
+        android:layout_height="42dp"
         android:text="HealthTracker"
+        android:textAlignment="center"
         android:textColor="@color/Black"
-        android:textSize="24sp"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,7 +71,7 @@
                             android:id="@+id/easyAverage"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingLeft="20dp"
+                            android:paddingLeft="15dp"
                             android:text="Average Score:"
                             android:textSize="20sp" />
 
@@ -78,7 +79,7 @@
                             android:id="@+id/easyAverageScore"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingLeft="20dp"
+                            android:paddingLeft="15dp"
                             android:textSize="24sp"
                             android:textStyle="bold" />
 
@@ -86,7 +87,7 @@
                             android:id="@+id/easyHigh"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingLeft="20dp"
+                            android:paddingLeft="15dp"
                             android:text="Max Score:"
                             android:textSize="20sp" />
 
@@ -94,7 +95,7 @@
                             android:id="@+id/easyHighScore"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingLeft="20dp"
+                            android:paddingLeft="15dp"
                             android:textSize="24sp"
                             android:textStyle="bold" />
 
@@ -102,7 +103,7 @@
                             android:id="@+id/easyLow"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingLeft="20dp"
+                            android:paddingLeft="15dp"
                             android:text="Min Score:"
                             android:textSize="20sp" />
 
@@ -110,7 +111,7 @@
                             android:id="@+id/easyLowScore"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingLeft="20dp"
+                            android:paddingLeft="15dp"
                             android:textSize="24sp"
                             android:textStyle="bold" />
 
@@ -159,7 +160,7 @@
                             android:id="@+id/mediumAverage"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingLeft="20dp"
+                            android:paddingLeft="15dp"
                             android:text="Average Score:"
                             android:textSize="20sp" />
 
@@ -167,7 +168,7 @@
                             android:id="@+id/mediumAverageScore"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingLeft="20dp"
+                            android:paddingLeft="15dp"
                             android:textSize="24sp"
                             android:textStyle="bold" />
 
@@ -175,7 +176,7 @@
                             android:id="@+id/mediumHigh"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingLeft="20dp"
+                            android:paddingLeft="15dp"
                             android:text="Max Score:"
                             android:textSize="20sp" />
 
@@ -183,7 +184,7 @@
                             android:id="@+id/mediumHighScore"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingLeft="20dp"
+                            android:paddingLeft="15dp"
                             android:textSize="24sp"
                             android:textStyle="bold" />
 
@@ -191,7 +192,7 @@
                             android:id="@+id/mediumLow"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingLeft="20dp"
+                            android:paddingLeft="15dp"
                             android:text="Min Score:"
                             android:textSize="20sp" />
 
@@ -199,7 +200,7 @@
                             android:id="@+id/mediumLowScore"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingLeft="20dp"
+                            android:paddingLeft="15dp"
                             android:textSize="24sp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -246,7 +247,7 @@
                             android:id="@+id/hardAverage"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingLeft="20dp"
+                            android:paddingLeft="15dp"
                             android:text="Average Score:"
                             android:textSize="20sp" />
 
@@ -254,7 +255,7 @@
                             android:id="@+id/hardAverageScore"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingLeft="20dp"
+                            android:paddingLeft="15dp"
                             android:textSize="24sp"
                             android:textStyle="bold" />
 
@@ -262,7 +263,7 @@
                             android:id="@+id/hardHigh"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingLeft="20dp"
+                            android:paddingLeft="15dp"
                             android:text="Max Score:"
                             android:textSize="20sp" />
 
@@ -270,7 +271,7 @@
                             android:id="@+id/hardHighScore"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingLeft="20dp"
+                            android:paddingLeft="15dp"
                             android:textSize="24sp"
                             android:textStyle="bold" />
 
@@ -278,7 +279,7 @@
                             android:id="@+id/hardLow"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingLeft="20dp"
+                            android:paddingLeft="15dp"
                             android:text="Min Score:"
                             android:textSize="20sp" />
 
@@ -286,7 +287,7 @@
                             android:id="@+id/hardLowScore"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingLeft="20dp"
+                            android:paddingLeft="15dp"
                             android:textSize="24sp"
                             android:textStyle="bold" />
                     </LinearLayout>

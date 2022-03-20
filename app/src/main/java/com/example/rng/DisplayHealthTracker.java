@@ -29,6 +29,7 @@ import com.jjoe64.graphview.GridLabelRenderer;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -39,6 +40,7 @@ import java.util.concurrent.TimeUnit;
 
 public class DisplayHealthTracker extends AppCompatActivity {
     String uid = (String) FirebaseAuth.getInstance().getCurrentUser().getUid();
+    private static final DecimalFormat df = new DecimalFormat("0.00");
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -121,8 +123,8 @@ public class DisplayHealthTracker extends AppCompatActivity {
                         else{
                             DrawGraph(series,easyGraphView);
                             easyAverageScore.setText(CalculateAverage(series));
-                            easyHighScore.setText(String.valueOf((int)series.getHighestValueY()));
-                            easyLowScore.setText(String.valueOf((int)series.getLowestValueY()));
+                            easyHighScore.setText(df.format(series.getHighestValueY()));
+                            easyLowScore.setText(df.format(series.getLowestValueY()));
                             EasyTitle.setText("Trail Making Test : Easy");
                         }
                     }
@@ -136,8 +138,8 @@ public class DisplayHealthTracker extends AppCompatActivity {
                         else{
                             DrawGraph(series,mediumGraphView);
                             mediumAverageScore.setText(CalculateAverage(series));
-                            mediumHighScore.setText(String.valueOf((int)series.getHighestValueY()));
-                            mediumLowScore.setText(String.valueOf((int)series.getLowestValueY()));
+                            mediumHighScore.setText(df.format(series.getHighestValueY()));
+                            mediumLowScore.setText(df.format(series.getLowestValueY()));
                             MediumTitle.setText("Trail Making Test : Medium");
                         }
                     }
@@ -151,8 +153,8 @@ public class DisplayHealthTracker extends AppCompatActivity {
                         else{
                             DrawGraph(series,hardGraphView);
                             hardAverageScore.setText(CalculateAverage(series));
-                            hardHighScore.setText(String.valueOf((int)series.getHighestValueY()));
-                            hardLowScore.setText(String.valueOf((int)series.getLowestValueY()));
+                            hardHighScore.setText(df.format(series.getHighestValueY()));
+                            hardLowScore.setText(df.format(series.getLowestValueY()));
                             HardTitle.setText("Trail Making Test : Hard");
                         }
                     }
@@ -170,8 +172,8 @@ public class DisplayHealthTracker extends AppCompatActivity {
                         else{
                             DrawGraph(series,easyGraphView);
                             easyAverageScore.setText(CalculateAverage(series));
-                            easyHighScore.setText(String.valueOf((int)series.getHighestValueY()));
-                            easyLowScore.setText(String.valueOf((int)series.getLowestValueY()));
+                            easyHighScore.setText(df.format(series.getHighestValueY()));
+                            easyLowScore.setText(df.format(series.getLowestValueY()));
                             EasyTitle.setText("Reaction Game : Easy");
                         }
                     }
@@ -185,8 +187,8 @@ public class DisplayHealthTracker extends AppCompatActivity {
                         else{
                             DrawGraph(series,hardGraphView);
                             hardAverageScore.setText(CalculateAverage(series));
-                            hardHighScore.setText(String.valueOf((int)series.getHighestValueY()));
-                            hardLowScore.setText(String.valueOf((int)series.getLowestValueY()));
+                            hardHighScore.setText(df.format(series.getHighestValueY()));
+                            hardLowScore.setText(df.format(series.getLowestValueY()));
                             HardTitle.setText("Reaction Game : Hard");
                         }
                     }
@@ -204,8 +206,8 @@ public class DisplayHealthTracker extends AppCompatActivity {
                         else{
                             DrawGraph(series,easyGraphView);
                             easyAverageScore.setText(CalculateAverage(series));
-                            easyHighScore.setText(String.valueOf((int)series.getHighestValueY()));
-                            easyLowScore.setText(String.valueOf((int)series.getLowestValueY()));
+                            easyHighScore.setText(df.format(series.getHighestValueY()));
+                            easyLowScore.setText(df.format(series.getLowestValueY()));
                             EasyTitle.setText("Memory Game : Easy");
                         }
                     }
@@ -219,8 +221,8 @@ public class DisplayHealthTracker extends AppCompatActivity {
                         else{
                             DrawGraph(series,hardGraphView);
                             hardAverageScore.setText(CalculateAverage(series));
-                            hardHighScore.setText(String.valueOf((int)series.getHighestValueY()));
-                            hardLowScore.setText(String.valueOf((int)series.getLowestValueY()));
+                            hardHighScore.setText(df.format(series.getHighestValueY()));
+                            hardLowScore.setText(df.format(series.getLowestValueY()));
                             HardTitle.setText("Memory Game : Hard");
                         }
                     }
@@ -249,14 +251,15 @@ public class DisplayHealthTracker extends AppCompatActivity {
 
     protected String CalculateAverage(LineGraphSeries<DataPoint> series){
         double sum = 0, count = 0;
+        DecimalFormat df = new DecimalFormat("0.00");
         Iterator value = series.getValues(series.getLowestValueX(),series.getHighestValueX());
         while(value.hasNext()){
             DataPoint data = (DataPoint) value.next();
             sum += data.getY();
             count += 1;
         }
-        int average = (int) (sum/count);
-        return String.valueOf(average);
+        String average = df.format(sum/count);
+        return average;
     }
 
 }
