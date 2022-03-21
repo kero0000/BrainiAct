@@ -30,13 +30,15 @@ public class DisplayLeaderBoard extends AppCompatActivity {
 
         TextView yourBest = findViewById(R.id.yourBestScore);
         TextView yourBestScore = findViewById(R.id.bestScore);
+        TextView yourBestScoreMed = findViewById(R.id.yourBestMed);
+        TextView yourBestScoreHard = findViewById(R.id.yourBestHard);
 
         String game = getIntent().getStringExtra("game");
 
         switch (game) {
             case "TMT":
 
-                // first callback for displaying easy high score's percentile
+                // Callback for best score for TMT
                 MyCallBack myCallbackYourBestTMTEasy = new MyCallBack() {
                     @Override
                     public void onCallback(Long value) {
@@ -46,6 +48,31 @@ public class DisplayLeaderBoard extends AppCompatActivity {
                     @Override
                     public void onCallback(String s) {
                         yourBestScore.setText(s);
+                    }
+                };
+
+                MyCallBack myCallbackYourBestTMTMedium= new MyCallBack() {
+                    @Override
+                    public void onCallback(Long value) {
+                        yourBestScoreMed.setText(String.valueOf(value));
+                    }
+
+                    @Override
+                    public void onCallback(String s) {
+                        yourBestScoreMed.setText(s);
+                    }
+                };
+
+
+                MyCallBack myCallbackYourBestTMTHard= new MyCallBack() {
+                    @Override
+                    public void onCallback(Long value) {
+                        yourBestScoreHard.setText(String.valueOf(value));
+                    }
+
+                    @Override
+                    public void onCallback(String s) {
+                        yourBestScoreHard.setText(s);
                     }
                 };
 
@@ -109,7 +136,7 @@ public class DisplayLeaderBoard extends AppCompatActivity {
                         percentile = snapshot.getChildrenCount() - count;
                         percentile = (percentile / snapshot.getChildrenCount()) * 100;
                         myCallbackTMTEasy.onCallback((long) percentile);
-                        myCallbackYourBestTMTEasy.onCallback((long)highScore);
+                        myCallbackYourBestTMTEasy.onCallback((long) highScore);
                     }
 
                     @Override
@@ -123,6 +150,7 @@ public class DisplayLeaderBoard extends AppCompatActivity {
                     int count = 0;
                     double percentile;
                     boolean check = true;
+                    long highScore = 0;
 
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -132,12 +160,14 @@ public class DisplayLeaderBoard extends AppCompatActivity {
                             }
                             if (childsnapshot.getKey().equals(uid)) {
                                 Long currentHighScore = childsnapshot.getValue(TMTHighScoreRecord.class).getHighScoreMedium();
+                                highScore = currentHighScore;
                                 check = false;
                             }
                         }
                         percentile = snapshot.getChildrenCount() - count;
                         percentile = (percentile / snapshot.getChildrenCount()) * 100;
                         myCallbackTMTMedium.onCallback((long) percentile);
+                        myCallbackYourBestTMTMedium.onCallback((long)highScore);
                     }
 
                     @Override
@@ -151,6 +181,7 @@ public class DisplayLeaderBoard extends AppCompatActivity {
                     int count = 0;
                     double percentile;
                     boolean check = true;
+                    long highScore = 0;
 
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -160,12 +191,14 @@ public class DisplayLeaderBoard extends AppCompatActivity {
                             }
                             if (childsnapshot.getKey().equals(uid)) {
                                 Long currentHighScore = childsnapshot.getValue(TMTHighScoreRecord.class).getHighScoreHard();
+                                highScore = currentHighScore;
                                 check = false;
                             }
                         }
                         percentile = snapshot.getChildrenCount() - count;
                         percentile = (percentile / snapshot.getChildrenCount()) * 100;
                         myCallbackTMTHard.onCallback((long) percentile);
+                        myCallbackYourBestTMTHard.onCallback((long) highScore);
 
                     }
 
@@ -180,6 +213,34 @@ public class DisplayLeaderBoard extends AppCompatActivity {
                 textView5.setVisibility(View.GONE);
                 textViewMedium.setVisibility(View.GONE);// SET MEDIUM TEXT INVISIBLE SINCE MEMORY AND REACTION GAME NO MEDIUM
                 // first callback for displaying easy high score's percentile
+
+                yourBestScoreMed.setVisibility(View.GONE);
+
+                MyCallBack myCallbackYourBestRxnEasy= new MyCallBack() {
+                    @Override
+                    public void onCallback(Long value) {
+                        yourBestScore.setText(String.valueOf(value));
+                    }
+
+                    @Override
+                    public void onCallback(String s) {
+                        yourBestScore.setText(s);
+                    }
+                };
+
+                MyCallBack myCallbackYourBestRxnHard= new MyCallBack() {
+                    @Override
+                    public void onCallback(Long value) {
+                        yourBestScoreHard.setText(String.valueOf(value));
+                    }
+
+                    @Override
+                    public void onCallback(String s) {
+                        yourBestScoreHard.setText(s);
+                    }
+                };
+
+
 
                 MyCallBack myCallbackReactionEasy = new MyCallBack() {
                     @Override
@@ -212,6 +273,7 @@ public class DisplayLeaderBoard extends AppCompatActivity {
                     int count = 0;
                     double percentile;
                     boolean check = true;
+                    long highScore = 0;
 
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -221,12 +283,14 @@ public class DisplayLeaderBoard extends AppCompatActivity {
                             }
                             if (childsnapshot.getKey().equals(uid)) {
                                 Long currentHighScore = childsnapshot.getValue(MemoryReactionHighScoreRecord.class).getHighScoreEasy();
+                                highScore = currentHighScore;
                                 check = false;
                             }
                         }
                         percentile = snapshot.getChildrenCount() - count;
                         percentile = (percentile / snapshot.getChildrenCount()) * 100;
                         myCallbackReactionEasy.onCallback((long) percentile);
+                        myCallbackYourBestRxnEasy.onCallback((long) highScore);
                     }
 
                     @Override
@@ -240,6 +304,7 @@ public class DisplayLeaderBoard extends AppCompatActivity {
                     int count = 0;
                     double percentile;
                     boolean check = true;
+                    long highScore = 0;
 
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -249,12 +314,14 @@ public class DisplayLeaderBoard extends AppCompatActivity {
                             }
                             if (childsnapshot.getKey().equals(uid)) {
                                 Long currentHighScore = childsnapshot.getValue(MemoryReactionHighScoreRecord.class).getHighScoreHard();
+                                highScore = currentHighScore;
                                 check = false;
                             }
                         }
                         percentile = snapshot.getChildrenCount() - count;
                         percentile = (percentile / snapshot.getChildrenCount()) * 100;
                         myCallbackReactionHard.onCallback((long) percentile);
+                        myCallbackYourBestRxnHard.onCallback((long) highScore);
                     }
 
                     @Override
@@ -267,6 +334,33 @@ public class DisplayLeaderBoard extends AppCompatActivity {
                 textView5.setVisibility(View.GONE);
                 textViewMedium.setVisibility(View.GONE);// SET MEDIUM TEXT INVISIBLE SINCE MEMORY AND REACTION GAME NO MEDIUM
                 // first callback for displaying easy high score's percentile
+                yourBestScoreMed.setVisibility(View.GONE);
+
+                MyCallBack myCallbackMemoryYourBestEasy = new MyCallBack() {
+                    @Override
+                    public void onCallback(Long value) {
+                        yourBestScore.setText(String.valueOf(value));
+                    }
+
+                    @Override
+                    public void onCallback(String s) {
+                        yourBestScore.setText(s);
+                    }
+                };
+
+                MyCallBack myCallbackMemoryYourBestHard = new MyCallBack() {
+                    @Override
+                    public void onCallback(Long value) {
+                        yourBestScoreHard.setText(String.valueOf(value));
+                    }
+
+                    @Override
+                    public void onCallback(String s) {
+                        yourBestScoreHard.setText(s);
+                    }
+                };
+
+
                 MyCallBack myCallbackMemoryEasy = new MyCallBack() {
                     @Override
                     public void onCallback(Long value) {
@@ -298,6 +392,7 @@ public class DisplayLeaderBoard extends AppCompatActivity {
                     int count = 0;
                     double percentile;
                     boolean check = true;
+                    long highScore = 0;
 
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -307,12 +402,15 @@ public class DisplayLeaderBoard extends AppCompatActivity {
                             }
                             if (childsnapshot.getKey().equals(uid)) {
                                 Long currentHighScore = childsnapshot.getValue(MemoryReactionHighScoreRecord.class).getHighScoreEasy();
+                                highScore = currentHighScore;
                                 check = false;
+
                             }
                         }
                         percentile = snapshot.getChildrenCount() - count;
                         percentile = (percentile / snapshot.getChildrenCount()) * 100;
                         myCallbackMemoryEasy.onCallback((long) percentile);
+                        myCallbackMemoryYourBestEasy.onCallback((long) highScore);
                     }
 
                     @Override
@@ -326,6 +424,7 @@ public class DisplayLeaderBoard extends AppCompatActivity {
                     int count = 0;
                     double percentile;
                     boolean check = true;
+                    long highScore = 0;
 
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -335,12 +434,14 @@ public class DisplayLeaderBoard extends AppCompatActivity {
                             }
                             if (childsnapshot.getKey().equals(uid)) {
                                 Long currentHighScore = childsnapshot.getValue(MemoryReactionHighScoreRecord.class).getHighScoreHard();
+                                highScore = currentHighScore;
                                 check = false;
                             }
                         }
                         percentile = snapshot.getChildrenCount() - count;
                         percentile = (percentile / snapshot.getChildrenCount()) * 100;
                         myCallbackMemoryHard.onCallback((long) percentile);
+                        myCallbackMemoryYourBestHard.onCallback((long) highScore);
                     }
 
                     @Override

@@ -33,8 +33,9 @@ public class ReactionGameMgr extends AppCompatActivity {
         display_msg = (TextView) findViewById(R.id.display_msg);
         display_msg = (TextView) findViewById(R.id.display_msg);
         // Initialise the Views so we can ID them
-        ImageView playImageView = findViewById(R.id.playButton);
+        Button playImageView = findViewById(R.id.playButtonRxn);
         TextView startMsg = findViewById(R.id.startPromptMsgTxt);
+        TextView reactionHeader = findViewById(R.id.reaction_game_title);
         retryButton = findViewById(R.id.retry_button);
         exitButton = findViewById(R.id.exit_button);
         waitMsg = findViewById(R.id.waitForGreen);
@@ -54,6 +55,7 @@ public class ReactionGameMgr extends AppCompatActivity {
 
                 // Set appropriate visibility
                 v.setVisibility(View.GONE);
+                reactionHeader.setVisibility(View.GONE);
                 startMsg.setVisibility(View.GONE);
                 waitMsg.setVisibility(View.VISIBLE);                // Displays msg informing users to wait for green screen before tapping screen
 

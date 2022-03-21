@@ -61,8 +61,11 @@
         <entry key="..\:/Users/shrey/StudioProjects/CognitiveApp/app/src/main/res/layout/tmt_help_page.xml" value="0.1" />
         <entry key="..\:/Users/shrey/StudioProjects/CognitiveApp/app/src/main/res/layout/trail_making_game_selection.xml" value="0.1" />
         <entry key="..\:/Users/shrey/StudioProjects/CognitiveApp/app/src/main/res/layout/trail_making_test_page.xml" value="0.136" />
+        <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp/app/src/main/res/layout-land/memory_game_difficulty_selector.xml" value="0.24779541446208111" />
+        <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp/app/src/main/res/layout-land/memory_game_page.xml" value="0.24779541446208111" />
         <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp/app/src/main/res/layout/TMT_help_page.xml" value="0.25" />
         <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp/app/src/main/res/layout/activity_display_health_tracker.xml" value="0.24003623188405798" />
+        <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp/app/src/main/res/layout/activity_display_leader_board.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp/app/src/main/res/layout/activity_main_page.xml" value="0.25" />
         <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp/app/src/main/res/layout/activity_register_user.xml" value="0.30978260869565216" />
@@ -73,7 +76,7 @@
         <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp/app/src/main/res/layout/leaderboard_selection_page.xml" value="0.223731884057971" />
         <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp/app/src/main/res/layout/memory_game_page.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp/app/src/main/res/layout/memory_help_page.xml" value="0.25833333333333336" />
-        <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp/app/src/main/res/layout/reaction_game_page.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp/app/src/main/res/layout/reaction_game_page.xml" value="0.33" />
         <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp/app/src/main/res/layout/reaction_game_selection.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp/app/src/main/res/layout/tmt_help_page.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/wenro/Documents/GitHub/CognitiveApp/app/src/main/res/layout/trail_making_game_selection.xml" value="0.17831813576494426" />
