@@ -6,7 +6,6 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
-
 import com.example.rng.entity.MemoryReactionHighScoreRecord;
 import com.example.rng.entity.TMTHighScoreRecord;
 import com.example.rng.entity.User;

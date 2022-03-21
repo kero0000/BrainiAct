@@ -6,14 +6,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.Timer;
 import java.util.TimerTask;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.rng.R;
 import com.example.rng.TimeTracker;
 import com.example.rng.pages.ReactionGamePage;
@@ -27,9 +24,6 @@ public class ReactionGameMgr extends AppCompatActivity {
     private int randomInt;
     private String gameDifficulty;
     private TextView display_msg;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

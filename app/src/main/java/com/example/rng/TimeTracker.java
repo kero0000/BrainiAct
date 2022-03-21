@@ -1,7 +1,6 @@
 package com.example.rng;
 
 import androidx.annotation.NonNull;
-
 import com.example.rng.entity.MemoryReactionHighScoreRecord;
 import com.example.rng.entity.TMTHighScoreRecord;
 import com.example.rng.entity.scoreRecord;
@@ -12,10 +11,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 
 public class TimeTracker {
     private String gameLevel;

@@ -2,16 +2,13 @@ package com.example.rng;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-
 import com.example.rng.entity.MemoryReactionHighScoreRecord;
 import com.example.rng.entity.TMTHighScoreRecord;
 import com.example.rng.pages.MyCallBack;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

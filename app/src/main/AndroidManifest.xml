@@ -38,11 +38,6 @@
             android:configChanges="orientation|keyboardHidden"
             android:exported="true" />
         <activity
-            android:name=".pages.HelpPageSelection"
-            android:screenOrientation="landscape"
-            android:configChanges="orientation|keyboardHidden"
-            android:exported="true" />
-        <activity
             android:name="HealthTrackerPage"
             android:screenOrientation="landscape"
             android:configChanges="orientation|keyboardHidden"

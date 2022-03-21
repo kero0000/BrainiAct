@@ -2,7 +2,6 @@ package com.example.rng.pages;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,7 +14,6 @@ import android.widget.ProgressBar;
 import com.example.rng.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.example.rng.manager.RegisterMgr;
-
 
 public class RegisterPage extends AppCompatActivity {
     private EditText editTextEmail, editTextPassword, editTextName, editTextAge;
